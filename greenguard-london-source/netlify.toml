@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect www to non-www (301 permanent)
+[[redirects]]
+  from = "https://www.greenguardlondon.ca/*"
+  to = "https://greenguardlondon.ca/:splat"
+  status = 301
+  force = true
+
+# SPA fallback — ONLY for routes that don't have pre-rendered HTML
+# Netlify serves static files first, then falls through to this
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
