@@ -5,13 +5,11 @@ import { useEffect } from 'react'
 
 export default function ThankYou() {
   // Google Ads Conversion Tracking — fires when thank-you page loads after form submission
+  // Google Ads Conversion Tracking — fires when thank-you page loads after form submission
   useEffect(() => {
     if (window.gtag) {
       window.gtag('event', 'conversion', {
-        // NOTE: Replace CONVERSION_LABEL with the actual label from your Google Ads
-        // conversion action (found in Google Ads → Goals → Conversions → Details).
-        // Format: 'AW-18052236127/CONVERSION_LABEL'
-        'send_to': 'AW-18052236127/CONVERSION_LABEL',
+        'send_to': 'AW-18052236127/ltkSCKmH3JQcEN-G_Z9D',
         'value': 50.0,
         'currency': 'CAD',
       })

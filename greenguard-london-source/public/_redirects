@@ -1,1 +1,3 @@
-/* /index.html 200
+https://greenguardlondon.netlify.app/* https://greenguardlondon.ca/:splat 301!
+http://greenguardlondon.netlify.app/* https://greenguardlondon.ca/:splat 301!
+/*    /index.html   200
