@@ -76,6 +76,18 @@ const routes = [
     description: 'GreenGuard London privacy policy. How we collect, use, and protect your personal information when you use our lawn care services in London, Ontario.',
     keywords: 'GreenGuard London privacy policy',
   },
+  {
+    path: '/blog',
+    title: 'Spring Lawn Care Guide 2026 | London, Ontario Checklist',
+    description: 'Step-by-step spring lawn care tips for Ontario properties. Learn dethatching, fertilization, and weed control from Greenguard London experts.',
+    keywords: 'spring lawn care London Ontario, spring yard cleanup London ON, lawn fertilization London, dethatching London Ontario, professional landscapers London ON',
+  },
+  {
+    path: '/terms',
+    title: 'Terms & Conditions | Greenguard London',
+    description: 'Terms and conditions for Greenguard London lawn care services, including SMS communication terms and opt-out instructions.',
+    keywords: 'Greenguard London terms and conditions, SMS terms lawn care London Ontario',
+  },
 ]
 
 // Read the built index.html template

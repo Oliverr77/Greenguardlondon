@@ -9,6 +9,7 @@ const nav = [
   { to: '/pricing', label: 'Pricing' },
   { to: '/about', label: 'About' },
   { to: '/reviews', label: 'Our Promise' },
+  { to: '/blog', label: 'Blog' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -34,9 +35,9 @@ export default function Header({ onQuote }) {
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="GreenGuard London Logo" className="h-12 w-auto object-contain" />
+          <img src={logo} alt="Greenguard London Logo" className="h-12 w-auto object-contain" />
           <span className="text-white font-extrabold text-xl tracking-tight leading-tight">
-            GreenGuard<br /><span className="text-green-400 text-sm font-bold tracking-wider">LONDON</span>
+            Greenguard<br /><span className="text-green-400 text-sm font-bold tracking-wider">LONDON</span>
           </span>
         </Link>
 

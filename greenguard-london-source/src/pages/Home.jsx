@@ -58,10 +58,10 @@ export default function Home({ onQuote }) {
   return (
     <>
       <SEO
-        title="Lawn Care & Landscaping in London, ON | GreenGuard London"
-        description="GreenGuard London — Professional lawn care in London, Ontario. Save 20% on seasonal packages — weekly mowing from $599/season. Book before April 30, 2026. From the team behind SnowGuard London."
+        title="Professional Lawn Care & Spring Cleanup | Greenguard London, ON"
+        description="Expert lawn mowing, weed control, and seasonal cleanup in London, Ontario. Eco-friendly, pet-safe, fully insured. Get your free quote today."
         path="/"
-        keywords="lawn mowing London Ontario, landscaping London ON, lawn care London Ontario, lawn mowing cost London, spring yard cleanup London, weed control London, fertilization London ON, garden maintenance London, affordable lawn care London ON, seasonal lawn package London Ontario, lawn care near me London, GreenGuard London"
+        keywords="lawn mowing London Ontario, landscaping London ON, lawn care London Ontario, lawn mowing cost London, spring yard cleanup London, weed control London, fertilization London ON, garden maintenance London, affordable lawn care London ON, seasonal lawn package London Ontario, lawn care near me London, Greenguard London"
       />
 
       {/* SUMMER 2026 PROMO START: Remove after April 30, 2026 — Hero */}
@@ -166,7 +166,6 @@ export default function Home({ onQuote }) {
 
               <div className="space-y-3 mb-6">
                 {[
-                  { name: 'Seasonal Care Starter', old: '$999', now: '$899', per: '/season' },
                   { name: 'All-Inclusive Seasonal', old: '$1,299', now: '$1,199', per: '/season' },
                   { name: 'Year-Round Protection', old: '$1,999', now: '$1,899', per: '/year' },
                 ].map((p, i) => (
@@ -219,11 +218,11 @@ export default function Home({ onQuote }) {
         </div>
       </section>
 
-      {/* Why GreenGuard */}
+      {/* Why Greenguard */}
       <section className="bg-white py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Why Choose GreenGuard?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Why Choose Greenguard?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -296,8 +295,8 @@ export default function Home({ onQuote }) {
       {/* Trust CTA */}
       <section className="bg-white py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">New to London — Here to Earn Your Trust</h2>
-          <p className="text-gray-600 mb-8">GreenGuard London is a new, locally owned lawn care company. We are fully insured, use eco-friendly products, and respond to every quote request within 24 hours.</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Backed by 2+ Years of Proven Property Care</h2>
+          <p className="text-gray-600 mb-8">Greenguard London is the sister company of <a href="https://snowguardlondon.ca" target="_blank" rel="noopener noreferrer" className="text-green-600 font-semibold hover:underline">SnowGuard London</a> — trusted by London homeowners for 2+ years of snow removal. That same reliability, accountability, and local expertise now covers your lawn.</p>
           <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
             Get Your Free Quote <ArrowRight size={18} />
           </Link>
@@ -308,7 +307,7 @@ export default function Home({ onQuote }) {
       <section className="hero-gradient text-white py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready for a Greener Lawn?</h2>
-          <p className="text-green-200 mb-8">GreenGuard London is locally owned, fully insured, and built to earn your trust — one lawn at a time. Get a free quote today.</p>
+          <p className="text-green-200 mb-8">Sister company of SnowGuard London — trusted since 2+ years for snow removal. The same team now handles your lawn, all season long.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <button onClick={onQuote} className="btn-primary text-lg !py-3 !px-8">Get Your Free Quote</button>
             <a href="tel:+12262128555" className="btn-secondary !border-white !text-white hover:!bg-white hover:!text-green-900 text-lg !py-3 !px-8">

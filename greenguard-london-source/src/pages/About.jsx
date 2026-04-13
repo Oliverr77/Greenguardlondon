@@ -11,15 +11,15 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About GreenGuard London — Locally Owned Lawn Care in London, ON"
-        description="GreenGuard London is a locally owned and operated, fully insured lawn care and landscaping company serving every neighbourhood in London, Ontario. Honest pricing, eco-friendly products, and a satisfaction guarantee."
+        title="About Greenguard London — Locally Owned Lawn Care in London, ON"
+        description="Greenguard London is a locally owned and operated, fully insured lawn care and landscaping company serving every neighbourhood in London, Ontario. Honest pricing, eco-friendly products, and a satisfaction guarantee."
         path="/about"
-        keywords="lawn care company London Ontario, local landscaping London ON, insured lawn care London, about GreenGuard London, lawn service near me London Ontario"
+        keywords="lawn care company London Ontario, local landscaping London ON, insured lawn care London, about Greenguard London, lawn service near me London Ontario"
       />
 
       <section className="hero-gradient text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-3xl lg:text-5xl font-extrabold mb-4">About GreenGuard London</h1>
+          <h1 className="text-3xl lg:text-5xl font-extrabold mb-4">About Greenguard London</h1>
           <p className="text-green-200 max-w-2xl mx-auto">Locally owned &amp; operated. Fully insured. Dedicated to keeping London's lawns beautiful since day one.</p>
         </div>
       </section>
@@ -30,10 +30,10 @@ export default function About() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Story</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                GreenGuard London was born from a simple belief: every homeowner deserves a lawn they can be proud of, without the hassle and guesswork of doing it themselves.
+                Greenguard London was born from a simple belief: every homeowner deserves a lawn they can be proud of, without the hassle and guesswork of doing it themselves.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                GreenGuard London is a new business built on a simple idea: do quality work, be honest, and earn every customer's trust. We're growing one property at a time — and we treat every lawn like it's our own.
+                Greenguard London is the sister company of <a href="https://snowguardlondon.ca" target="_blank" rel="noopener noreferrer" className="text-green-600 font-semibold hover:underline">SnowGuard London</a> — a trusted name in London property care for 2+ years. That proven track record of reliability and accountability is the foundation we built Greenguard on.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We're not a big corporation. We're your neighbours. Locally owned and operated — we live here, we work here, and we take pride in making London a greener, more beautiful place to call home.

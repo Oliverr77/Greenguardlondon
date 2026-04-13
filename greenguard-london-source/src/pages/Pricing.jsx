@@ -16,8 +16,8 @@ export default function Pricing({ onQuote }) {
   return (
     <>
       <SEO
-        title="Lawn Care Pricing London ON | GreenGuard London"
-        description="Lawn care pricing for London, ON. Save 10% — seasonal packages from $499/season. Combo packages $100 off. Per cut from $45. Book before April 30. Get a free quote from GreenGuard London."
+        title="Lawn Care Pricing & Seasonal Packages | Greenguard London"
+        description="Affordable lawn care packages starting at $45/cut. Seasonal Pro, All-Inclusive, and Year-Round Protection plans available. Free quote."
         path="/pricing"
         keywords="lawn mowing cost London Ontario, lawn care pricing London ON, affordable lawn care London, seasonal lawn package London Ontario, lawn mowing price per cut London, weekly lawn mowing London ON"
       />
@@ -59,6 +59,7 @@ export default function Pricing({ onQuote }) {
             ].map((card, i) => (
               <div key={i} className={`rounded-2xl p-6 text-center border-2 ${i === 1 ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-white'}`}>
                 <div className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-3">{card.tier}</div>
+                <div className="text-xs text-gray-400 mb-0.5">Starting from</div>
                 <div className="text-4xl font-extrabold text-gray-900 mb-1">{card.price}<span className="text-lg font-normal text-gray-400">{card.per}</span></div>
                 <div className="text-sm text-gray-500 mt-1">{card.size}</div>
                 {card.note && <div className="text-xs text-green-600 font-semibold mt-1">{card.note}</div>}
@@ -235,46 +236,13 @@ export default function Pricing({ onQuote }) {
           {/* SUMMER 2026 PROMO START */}
           <div className="bg-[#1a1a1a] border-l-4 border-green-500 rounded-r-xl p-5 mb-8">
             <p className="text-sm text-white">
-              💰 <strong>Early Bird Combo Deal: Save $100</strong> on any combo package. Seasonal Care Starter $899, All-Inclusive $1,199, Year-Round Protection $1,899. Book before April 30, 2026.
+              💰 <strong>Early Bird Combo Deal: Save $100</strong> on any combo package. All-Inclusive Seasonal Care starting from $1,199, Year-Round Protection starting from $1,899. Book before April 30, 2026.
             </p>
           </div>
           <p className="text-center text-sm text-orange-600 font-semibold mb-8">⏰ Early Bird pricing ends April 30, 2026. Limited spots available — secure yours today.</p>
           {/* SUMMER 2026 PROMO END */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            {/* Seasonal Care Starter */}
-            <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-7 flex flex-col">
-              {/* SUMMER 2026 PROMO START */}
-              <div className="bg-green-100 text-green-700 text-xs font-extrabold px-3 py-1.5 rounded-full inline-flex items-center gap-1 self-start mb-3">
-                <Tag size={11} /> EARLY BIRD — SAVE $100
-              </div>
-              {/* SUMMER 2026 PROMO END */}
-              <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Starter Combo</div>
-              <h3 className="text-lg font-extrabold text-gray-900 mb-2">Seasonal Care Starter</h3>
-              <p className="text-gray-500 text-sm mb-4 leading-relaxed">Seasonal Pro mowing + Spring + Fall cleanup. Great all-rounder for the season.</p>
-              <div className="mb-5">
-                <span className="text-xs text-gray-400 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-gray-900">$899</span>
-                <span className="text-gray-400 text-sm">/season</span>
-                <div className="text-sm mt-1 text-gray-500">If purchased separately: $1,047 — <span className="text-green-600 font-bold">You save $148</span></div>
-              </div>
-              <ul className="space-y-2 flex-1 mb-7">
-                {[
-                  'Seasonal Pro mowing (20 cuts)',
-                  'Spring cleanup ($149 value)',
-                  'Fall cleanup ($199 value)',
-                  'Priority scheduling',
-                ].map((f, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckCircle size={16} className="text-green-500 shrink-0 mt-0.5" /> {f}
-                  </li>
-                ))}
-              </ul>
-              <button onClick={onQuote} className="w-full py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition">
-                Lock In $100 Savings →
-              </button>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
             {/* All-Inclusive Seasonal */}
             <div className="relative bg-green-600 rounded-2xl p-7 flex flex-col text-white ring-4 ring-green-300 shadow-2xl md:scale-105">
@@ -323,7 +291,7 @@ export default function Pricing({ onQuote }) {
               {/* SUMMER 2026 PROMO END */}
               <div className="text-xs font-bold uppercase tracking-widest text-green-400 mb-1">Premium — Exclusive</div>
               <h3 className="text-lg font-extrabold text-white mb-2">Year-Round Property Protection</h3>
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">GreenGuard lawn care (summer) + SnowGuard snow removal (winter). The ONLY year-round property care package in London, ON.</p>
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">Greenguard lawn care (summer) + SnowGuard snow removal (winter). The ONLY year-round property care package in London, ON.</p>
               <div className="mb-5">
                 <span className="text-xs text-green-400 block mb-0.5">Starting from</span>
                 <span className="text-4xl font-extrabold text-white">$1,899</span>

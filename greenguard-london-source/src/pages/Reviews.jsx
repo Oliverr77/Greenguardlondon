@@ -6,10 +6,10 @@ export default function Reviews() {
   return (
     <>
       <SEO
-        title="Our Promise | GreenGuard London — Honest Lawn Care in London, ON"
-        description="GreenGuard London is a new, locally owned lawn care business committed to earning your trust. Fully insured, eco-friendly, and dedicated to quality from the very first cut."
+        title="Our Promise | Greenguard London — Honest Lawn Care in London, ON"
+        description="Greenguard London — sister company of SnowGuard London, trusted for 2+ years. Fully insured, eco-friendly lawn care in London, Ontario with a satisfaction guarantee."
         path="/reviews"
-        keywords="trustworthy lawn care London Ontario, insured lawn care London, honest lawn service London ON, new lawn care business London"
+        keywords="trustworthy lawn care London Ontario, insured lawn care London, honest lawn service London ON, SnowGuard London sister company"
       />
 
       {/* Hero */}
@@ -17,15 +17,15 @@ export default function Reviews() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl lg:text-5xl font-extrabold mb-5">Our Promise to You</h1>
           <p className="text-green-200 text-lg max-w-xl mx-auto leading-relaxed">
-            GreenGuard London is new to the neighbourhood — and we're here to earn your trust, one lawn at a time.
+            Sister company of SnowGuard London — trusted since 2+ years. The same team, the same standards, now caring for your lawn.
           </p>
         </div>
       </section>
 
-      {/* Why Trust GreenGuard — 3 cards */}
+      {/* Why Trust Greenguard — 3 cards */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-10">Why Trust GreenGuard?</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-10">Why Trust Greenguard?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -56,13 +56,13 @@ export default function Reviews() {
         </div>
       </section>
 
-      {/* The GreenGuard Guarantee */}
+      {/* The Greenguard Guarantee */}
       <section className="py-16 bg-[#1a3a2a] text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <Star size={26} className="text-green-400" />
           </div>
-          <h2 className="text-2xl lg:text-3xl font-bold mb-5">The GreenGuard Guarantee</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold mb-5">The Greenguard Guarantee</h2>
           <p className="text-green-200 leading-relaxed text-lg max-w-2xl mx-auto">
             If you're not satisfied with our work, we'll come back and make it right — no questions asked. We're building our reputation one property at a time, and your satisfaction is everything.
           </p>
@@ -97,9 +97,9 @@ export default function Reviews() {
           <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-5">
             <Heart size={22} className="text-green-400" />
           </div>
-          <h2 className="text-3xl font-bold mb-4">Be One of Our First Customers</h2>
+          <h2 className="text-3xl font-bold mb-4">Experience the Greenguard Difference</h2>
           <p className="text-green-200 mb-8 max-w-xl mx-auto leading-relaxed">
-            Early customers get our best seasonal pricing. Let us show you what GreenGuard London can do — no contracts, no pressure.
+            Backed by 2+ years of proven property care with SnowGuard London. Get seasonal pricing that's fair, transparent, and locked in — no contracts, no pressure.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="btn-primary text-lg !py-3 !px-8">Get Your Free Quote</Link>

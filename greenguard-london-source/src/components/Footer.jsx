@@ -9,9 +9,9 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="mb-4 flex items-center gap-3">
-            <img src={logo} alt="GreenGuard London Logo" className="h-14 w-auto object-contain" />
+            <img src={logo} alt="Greenguard London Logo" className="h-14 w-auto object-contain" />
             <span className="text-white font-extrabold text-xl tracking-tight leading-tight">
-              GreenGuard<br /><span className="text-green-400 text-sm font-bold tracking-wider">LONDON</span>
+              Greenguard<br /><span className="text-green-400 text-sm font-bold tracking-wider">LONDON</span>
             </span>
           </div>
           <p className="text-sm leading-relaxed">
@@ -64,8 +64,11 @@ export default function Footer() {
 
       <div className="border-t border-green-900 py-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-400">
-          <span>&copy; {new Date().getFullYear()} GreenGuard London. All rights reserved.</span>
-          <Link to="/privacy" className="hover:text-green-400 transition">Privacy Policy</Link>
+          <span>&copy; {new Date().getFullYear()} Greenguard London. All rights reserved.</span>
+          <div className="flex gap-4">
+            <Link to="/privacy" className="hover:text-green-400 transition">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-green-400 transition">Terms &amp; Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>

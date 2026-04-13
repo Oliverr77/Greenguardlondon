@@ -14,6 +14,8 @@ import Reviews from './pages/Reviews'
 import Gallery from './pages/Gallery'
 import Privacy from './pages/Privacy'
 import ThankYou from './pages/ThankYou'
+import Blog from './pages/Blog'
+import Terms from './pages/Terms'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -45,6 +47,8 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <Footer />

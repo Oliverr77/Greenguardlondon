@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', address: '', serviceType: '', message: '' })
+  const [smsConsent, setSmsConsent] = useState(false)
   const navigate = useNavigate()
   const update = (f) => (e) => setForm(s => ({ ...s, [f]: e.target.value }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const body = new URLSearchParams({ 'form-name': 'contact', ...form }).toString()
+    const body = new URLSearchParams({ 'form-name': 'contact', ...form, smsConsent: smsConsent ? 'yes' : 'no' }).toString()
     try {
       const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
       if (!res.ok) throw new Error(`Server responded ${res.status}`)
@@ -24,15 +25,15 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact GreenGuard London — Free Lawn Care Quote in London, ON"
-        description="Contact GreenGuard London for professional lawn mowing, landscaping, and yard care in London, Ontario. Call (226) 212-8555. Free quotes within 24 hours."
+        title="Free Quote & Lawn Care Consultation | London, ON"
+        description="Request a free on-site assessment. Greenguard London serves all neighbourhoods. Call (226) 212-8555 or submit the form below."
         path="/contact"
-        keywords="contact lawn care London Ontario, lawn care quote London ON, lawn mowing phone number London, GreenGuard London contact, landscaping quote London Ontario"
+        keywords="contact lawn care London Ontario, lawn care quote London ON, lawn mowing phone number London, Greenguard London contact, landscaping quote London Ontario"
       />
 
       <section className="hero-gradient text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-3xl lg:text-5xl font-extrabold mb-4">Contact GreenGuard London</h1>
+          <h1 className="text-3xl lg:text-5xl font-extrabold mb-4">Contact Greenguard London</h1>
           <p className="text-green-200 max-w-2xl mx-auto">Ready for professional lawn care in London, Ontario? Request a free quote and we'll get back to you within 24 hours.</p>
         </div>
       </section>
@@ -65,7 +66,7 @@ export default function Contact() {
             {/* Map */}
             <div className="rounded-xl overflow-hidden h-48 mt-4">
               <iframe
-                title="GreenGuard London Location"
+                title="Greenguard London Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93169.37752090476!2d-81.31849165!3d42.98485875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef20ea88d9b0b%3A0x28c7d7699a056b95!2sLondon%2C%20ON!5e0!3m2!1sen!2sca!4v1709000000000!5m2!1sen!2sca"
                 width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy"
               />
@@ -86,12 +87,11 @@ export default function Contact() {
                 <input name="address" placeholder="Property Address (optional)" value={form.address} onChange={update('address')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
                 <select name="serviceType" value={form.serviceType} onChange={update('serviceType')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
                   <option value="">Select a Service (optional)</option>
-                  <option>Per Cut Lawn Mowing ($49/cut)</option>
-                  <option>Bi-Weekly Seasonal Package (from $599)</option>
-                  <option>Weekly Seasonal Package (from $749)</option>
-                  <option>Premium Weekly Package (from $899)</option>
-                  <option>All-Inclusive Seasonal Care (from $1,100)</option>
-                  <option>Year-Round Property Protection (from $2,000)</option>
+                  <option>Per Cut Lawn Mowing (starting from $45/cut)</option>
+                  <option>Biweekly Seasonal Plan (starting from $499/season)</option>
+                  <option>Seasonal Pro (starting from $699/season)</option>
+                  <option>All-Inclusive Seasonal Care (starting from $1,199/season)</option>
+                  <option>Year-Round Property Protection (starting from $1,899/year)</option>
                   <option>Weed Control & Fertilization</option>
                   <option>Spring Cleanup</option>
                   <option>Fall Cleanup</option>
@@ -100,6 +100,27 @@ export default function Contact() {
                   <option>General Inquiry</option>
                 </select>
                 <textarea name="message" rows={4} placeholder="Your Message" value={form.message} onChange={update('message')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none" />
+                {/* SMS Consent — required for A2P 10DLC compliance */}
+                <div className="bg-green-50 border border-green-200 rounded-xl p-4 space-y-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={smsConsent}
+                      onChange={e => setSmsConsent(e.target.checked)}
+                      className="mt-0.5 w-4 h-4 shrink-0 accent-green-600"
+                    />
+                    <span className="text-sm text-gray-700 font-medium leading-snug">
+                      I agree to receive SMS messages from Greenguard London regarding my service request.
+                    </span>
+                  </label>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    By submitting this form, you agree to receive SMS messages from Greenguard London, including appointment reminders, service updates, and occasional promotions. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for assistance.{' '}
+                    <a href="/privacy" className="text-green-600 hover:underline">Privacy Policy</a>
+                    {' '}and{' '}
+                    <a href="/terms" className="text-green-600 hover:underline">Terms &amp; Conditions</a>.
+                  </p>
+                </div>
                 <button type="submit" className="btn-primary w-full">Send Message</button>
               </form>
           </div>

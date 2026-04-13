@@ -5,12 +5,11 @@ import { useEffect } from 'react'
 
 export default function ThankYou() {
   // Google Ads Conversion Tracking — fires when thank-you page loads after form submission
-  // Google Ads Conversion Tracking — fires when thank-you page loads after form submission
   useEffect(() => {
     if (window.gtag) {
-      window.gtag('event', 'conversion', {
+      window.gtag('event', 'submit_lead_form', {
         'send_to': 'AW-18052236127/ltkSCKmH3JQcEN-G_Z9D',
-        'value': 50.0,
+        'value': 1.0,
         'currency': 'CAD',
       })
     }
@@ -19,8 +18,8 @@ export default function ThankYou() {
   return (
     <>
       <SEO
-        title="Thank You — GreenGuard London"
-        description="Thank you for contacting GreenGuard London. We'll respond to your lawn care inquiry within 24 hours."
+        title="Thank You — Greenguard London"
+        description="Thank you for contacting Greenguard London. We'll respond to your lawn care inquiry within 24 hours."
         path="/thank-you"
       />
 

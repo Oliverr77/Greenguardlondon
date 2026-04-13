@@ -8,7 +8,7 @@ const services = [
     title: 'Lawn Mowing',
     badge: 'Most Popular',
     badgeColor: 'bg-yellow-400 text-yellow-900',
-    price: 'From $45 / cut',
+    price: 'Starting from $45 / cut',
     desc: 'Professional-grade mowing on your schedule. We adjust blade height by season, alternate patterns to prevent soil compaction, and leave crisp edges every visit.',
     features: [
       'Per cut from $45 — no contract',
@@ -22,7 +22,7 @@ const services = [
     title: 'Weed Control & Fertilization',
     badge: 'Eco-Friendly',
     badgeColor: 'bg-green-100 text-green-700',
-    price: 'From $49 / application',
+    price: 'Starting from $49 / application',
     desc: 'Keep your lawn lush and weed-free all season long. Our pet-safe, eco-conscious treatments target weeds at the root while nourishing your grass for thick, healthy growth.',
     features: [
       'Weed control from $49 / application',
@@ -36,7 +36,7 @@ const services = [
     title: 'Spring & Fall Cleanup',
     badge: 'Seasonal',
     badgeColor: 'bg-orange-100 text-orange-700',
-    price: 'Spring $149 · Fall $199',
+    price: 'Starting from $149',
     desc: 'Bookend your season with a spotless property. Spring cleanup preps your beds for growth; fall cleanup clears every leaf so your lawn bounces back stronger next year.',
     features: [
       'Spring cleanup $149 — debris removal, bed prep, first mow',
@@ -75,7 +75,7 @@ const services = [
     icon: Leaf,
     title: 'Lawn Aeration',
     badge: null,
-    price: 'From $99',
+    price: 'Starting from $99',
     desc: 'Core aeration breaks compacted soil, improves drainage, and lets nutrients reach the roots — the highest-ROI single service for a thick, resilient lawn.',
     features: [
       'Core aeration for compacted soil',
@@ -90,10 +90,45 @@ export default function Services({ onQuote }) {
   return (
     <>
       <SEO
-        title="Lawn Care & Landscaping Services in London, ON"
-        description="Professional lawn mowing, landscaping, weed control, fertilization, garden bed maintenance, spring & fall cleanup services in London, Ontario. Locally owned. Free quotes."
+        title="Lawn Mowing, Weed Control & Garden Services | London, Ontario"
+        description="Professional lawn maintenance, spring cleanup, fertilization, and weed control. Serving all London neighbourhoods. Book online 7am–8pm daily."
         path="/services"
         keywords="lawn mowing service London Ontario, landscaping London ON, weed control London, fertilization London Ontario, spring cleanup London, fall leaf removal London ON, garden maintenance London, yard care London Ontario"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'Greenguard London',
+          description: 'Professional lawn care and landscaping services in London, Ontario.',
+          url: 'https://greenguardlondon.ca',
+          telephone: '+12262128555',
+          email: 'info@greenguardlondon.ca',
+          image: 'https://greenguardlondon.ca/og-image.jpg',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'London',
+            addressRegion: 'ON',
+            addressCountry: 'CA',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 42.9849,
+            longitude: -81.2453,
+          },
+          openingHours: 'Mo-Su 07:00-20:00',
+          priceRange: '$$',
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Lawn Care Services',
+            itemListElement: [
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Mowing' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Spring Cleanup' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Weed Control' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Fertilization' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fall Leaf Cleanup' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garden Bed Maintenance' } },
+            ],
+          },
+        }}
       />
 
       {/* Hero */}
@@ -172,10 +207,10 @@ export default function Services({ onQuote }) {
       </section>
       {/* SUMMER 2026 PROMO END */}
 
-      {/* Why London Homeowners Choose GreenGuard */}
+      {/* Why London Homeowners Choose Greenguard */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-10 text-center">Why London Homeowners Choose GreenGuard</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-10 text-center">Why London Homeowners Choose Greenguard</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
               { icon: Shield, stat: '100%', label: 'Fully Insured', sub: 'Liability on every job' },
@@ -207,17 +242,8 @@ export default function Services({ onQuote }) {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
-              {
-                name: 'Seasonal Care Starter',
-                oldPrice: '$999',
-                price: '$899',
-                per: '/season',
-                badge: 'Starter Combo',
-                desc: 'Seasonal Pro (20 cuts) + Spring Cleanup + Fall Cleanup',
-                cta: 'Get This Package',
-              },
               {
                 name: 'All-Inclusive Seasonal Care',
                 oldPrice: '$1,299',
@@ -261,7 +287,7 @@ export default function Services({ onQuote }) {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-xl font-bold text-gray-900 mb-3">Serving All of London, Ontario</h2>
           <p className="text-gray-600 text-sm leading-relaxed max-w-3xl mx-auto">
-            GreenGuard London provides lawn mowing, weed control, fertilization, spring &amp; fall cleanup, aeration, and landscaping across every neighbourhood in London, ON. Locally owned — we know London lawns.
+            Greenguard London provides lawn mowing, weed control, fertilization, spring &amp; fall cleanup, aeration, and landscaping across every neighbourhood in London, ON. Locally owned — we know London lawns.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mt-5">
             {['Downtown London', 'Old North', 'Masonville', 'Byron', 'White Oaks', 'Argyle', 'Oakridge', 'Riverbend', 'Wortley Village', 'Stoneybrook', 'Medway', 'Northridge', 'Lambeth', 'Hyde Park', 'Sunningdale', 'Stoney Creek'].map((n, i) => (
