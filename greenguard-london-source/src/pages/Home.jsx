@@ -1,7 +1,6 @@
 import SEO from '../components/SEO'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { CheckCircle, Clock, Shield, Leaf, Scissors, Flower2, TreePine, Sprout, Sun, ArrowRight, MapPin, Tag, Sparkles } from 'lucide-react'
+import { CheckCircle, Clock, Shield, Leaf, Scissors, Flower2, TreePine, Sprout, Sun, ArrowRight, MapPin } from 'lucide-react'
 
 const services = [
   { icon: Scissors, title: 'Lawn Mowing', desc: 'Weekly & bi-weekly professional mowing with trimming and clipping cleanup.' },
@@ -12,46 +11,6 @@ const services = [
   { icon: Leaf, title: 'Fall Cleanup', desc: 'Leaf removal, garden winterizing, and end-of-season property prep.' },
 ]
 
-/* SUMMER 2026 PROMO START: Remove after April 30, 2026 — Countdown Component */
-function CountdownBanner() {
-  const target = new Date('2026-04-30T23:59:59-05:00').getTime()
-  const [timeLeft, setTimeLeft] = useState(getTime())
-  function getTime() {
-    const diff = Math.max(0, target - Date.now())
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      mins: Math.floor((diff / (1000 * 60)) % 60),
-      secs: Math.floor((diff / 1000) % 60),
-    }
-  }
-  useEffect(() => {
-    const id = setInterval(() => setTimeLeft(getTime()), 1000)
-    return () => clearInterval(id)
-  }, [])
-  return (
-    <div className="bg-[#1a1a1a] py-6">
-      <div className="max-w-3xl mx-auto px-4 text-center">
-        <p className="text-green-400 text-xs font-bold uppercase tracking-widest mb-3">Early Bird Pricing Ends In</p>
-        <div className="flex justify-center gap-4">
-          {[
-            { val: timeLeft.days, label: 'Days' },
-            { val: timeLeft.hours, label: 'Hours' },
-            { val: timeLeft.mins, label: 'Min' },
-            { val: timeLeft.secs, label: 'Sec' },
-          ].map((t, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-xl w-16 h-16 flex flex-col items-center justify-center">
-              <span className="text-2xl font-extrabold text-white leading-none">{String(t.val).padStart(2, '0')}</span>
-              <span className="text-[10px] text-gray-400 uppercase tracking-wider">{t.label}</span>
-            </div>
-          ))}
-        </div>
-        <p className="text-gray-500 text-xs mt-3">Book before April 30, 2026 to lock in discounted rates</p>
-      </div>
-    </div>
-  )
-}
-/* SUMMER 2026 PROMO END — Countdown Component */
 
 
 export default function Home({ onQuote }) {
@@ -64,32 +23,25 @@ export default function Home({ onQuote }) {
         keywords="lawn mowing London Ontario, landscaping London ON, lawn care London Ontario, lawn mowing cost London, spring yard cleanup London, weed control London, fertilization London ON, garden maintenance London, affordable lawn care London ON, seasonal lawn package London Ontario, lawn care near me London, Greenguard London"
       />
 
-      {/* SUMMER 2026 PROMO START: Remove after April 30, 2026 — Hero */}
       <section className="relative text-white overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #0f2e1a 50%, #1B5E20 100%)' }}>
         <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle at 30% 40%, #22c55e 0%, transparent 50%), radial-gradient(circle at 80% 60%, #16a34a 0%, transparent 50%)' }} />
         <div className="max-w-7xl mx-auto px-4 py-20 lg:py-28 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-yellow-400 text-yellow-900 text-xs font-extrabold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg mb-6">
-              🌿 Summer 2026 Early Bird — Ends April 30
-            </div>
             <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Save on Your<br />
-              <span className="text-green-400">Lawn Care This Summer</span>
+              Professional Lawn Care<br />
+              <span className="text-green-400">in London, Ontario</span>
             </h1>
             <p className="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed">
-              Book any seasonal plan before April 30th and save 10%. Or go all-in with a combo package and save $100. Mowing starting at just $45/cut.
+              Weekly and bi-weekly mowing, weed control, fertilization, and seasonal cleanup. Fully insured, eco-friendly, locally owned.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/pricing#seasonal" className="btn-primary text-lg !py-3 !px-8 inline-flex items-center gap-2">
-                See Seasonal Plans <ArrowRight size={18} />
+              <Link to="/pricing" className="btn-primary text-lg !py-3 !px-8 inline-flex items-center gap-2">
+                See Pricing <ArrowRight size={18} />
               </Link>
-              <Link to="/pricing#combos" className="btn-secondary !border-white !text-white hover:!bg-white hover:!text-green-900 text-lg !py-3 !px-8 inline-flex items-center gap-2">
-                Save $100 on Combos <ArrowRight size={18} />
-              </Link>
+              <button onClick={onQuote} className="btn-secondary !border-white !text-white hover:!bg-white hover:!text-green-900 text-lg !py-3 !px-8">
+                Get Free Quote
+              </button>
             </div>
-
-            <p className="text-yellow-400 font-semibold text-sm mt-6">⏰ Offers end April 30, 2026 — Limited spots for the 2026 season</p>
-
             <div className="flex flex-wrap gap-6 mt-6 text-sm text-green-200">
               <span className="flex items-center gap-1.5"><CheckCircle size={16} /> Fully Insured</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={16} /> Eco-Friendly Products</span>
@@ -98,7 +50,6 @@ export default function Home({ onQuote }) {
           </div>
         </div>
       </section>
-      {/* SUMMER 2026 PROMO END — Hero */}
 
       {/* Trust bar */}
       <section className="bg-white py-8 border-b">
@@ -117,78 +68,6 @@ export default function Home({ onQuote }) {
         </div>
       </section>
 
-      {/* SUMMER 2026 PROMO START: Remove after April 30, 2026 — Countdown + Two Offers */}
-      <CountdownBanner />
-
-      <section className="py-14 lg:py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-center text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Two Ways to Save This Summer</h2>
-          <p className="text-center text-gray-500 max-w-xl mx-auto mb-10 text-sm">Book before April 30, 2026 and lock in early bird pricing. Choose seasonal savings or go all-in with a combo deal.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 1: Save 10% */}
-            <div className="bg-white border-2 border-green-500 rounded-2xl p-8 relative">
-              <div className="absolute -top-3.5 left-6 bg-green-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow flex items-center gap-1">
-                <Tag size={12} /> Seasonal Plans
-              </div>
-              <h3 className="text-2xl font-extrabold text-gray-900 mt-3 mb-2">Save 10% — Early Bird</h3>
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed">Choose any seasonal plan and save 10% when you book before April 30th. Lock in lower rates for the full 2026 season.</p>
-
-              <div className="space-y-3 mb-6">
-                {[
-                  { name: 'Biweekly Seasonal', old: '$549', now: '$499', save: 'Save $50' },
-                  { name: 'Seasonal Pro', old: '$769', now: '$699', save: 'Save $70', hot: true },
-                ].map((p, i) => (
-                  <div key={i} className={`flex items-center justify-between py-2.5 px-4 rounded-lg ${p.hot ? 'bg-green-50 border border-green-200' : 'bg-gray-50'}`}>
-                    <span className="text-sm font-semibold text-gray-900">{p.name}</span>
-                    <div className="text-right">
-                      <span className="text-gray-400 text-sm line-through mr-2">{p.old}</span>
-                      <span className="text-green-700 font-extrabold text-lg">{p.now}</span>
-                      <span className="text-green-600 text-xs font-bold ml-2">{p.save}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Link to="/pricing#seasonal" className="block w-full py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition text-center">
-                View Seasonal Plans →
-              </Link>
-              <p className="text-xs text-gray-400 mt-3 text-center">All prices are starting rates. 10% early bird discount. Valid for new signups before April 30, 2026.</p>
-            </div>
-
-            {/* Card 2: Save $100 */}
-            <div className="bg-[#1a1a1a] border-2 border-green-500 rounded-2xl p-8 relative text-white">
-              <div className="absolute -top-3.5 left-6 bg-yellow-400 text-yellow-900 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow flex items-center gap-1">
-                <Sparkles size={12} /> Combo Packages
-              </div>
-              <h3 className="text-2xl font-extrabold text-white mt-3 mb-2">Save $100 When You Go All-In</h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">Book any combo package before April 30th and save $100 instantly. Maximum value, minimum hassle.</p>
-
-              <div className="space-y-3 mb-6">
-                {[
-                  { name: 'All-Inclusive Seasonal', old: '$1,299', now: '$1,199', per: '/season' },
-                  { name: 'Year-Round Protection', old: '$1,999', now: '$1,899', per: '/year' },
-                ].map((p, i) => (
-                  <div key={i} className="flex items-center justify-between py-2.5 px-4 rounded-lg bg-white/5 border border-white/10">
-                    <span className="text-sm font-semibold text-gray-200">{p.name}</span>
-                    <div className="text-right">
-                      <span className="text-gray-500 text-sm line-through mr-2">{p.old}</span>
-                      <span className="text-green-400 font-extrabold text-lg">{p.now}</span>
-                      <span className="text-gray-500 text-xs ml-1">{p.per}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Link to="/pricing#combos" className="block w-full py-3 rounded-full bg-green-500 text-white font-semibold hover:bg-green-400 transition text-center">
-                View Combo Packages →
-              </Link>
-              <p className="text-xs text-gray-500 mt-3 text-center">Valid for new combo package signups before April 30, 2026.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* SUMMER 2026 PROMO END — Two Offers */}
 
       {/* Services Overview */}
       <section className="section-gradient py-16 lg:py-20">
@@ -243,7 +122,7 @@ export default function Home({ onQuote }) {
         </div>
       </section>
 
-      {/* Pricing Preview — SUMMER 2026 PROMO: Revert prices after April 30, 2026 */}
+      {/* Pricing Preview */}
       <section className="section-gradient py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -252,17 +131,15 @@ export default function Home({ onQuote }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { name: 'Per Cut', price: '$45', per: '/cut', features: ['Professional mowing', 'String trimming & edging', 'Blower cleanup', 'No commitment required'] },
-              { name: 'Seasonal Pro', oldPrice: '$769', price: '$699', per: '/season', promo: 'SAVE $70', features: ['Weekly May–Aug (16 cuts)', 'Biweekly Sep–Oct (4 cuts)', '~$35/cut effective', 'Priority scheduling'] },
-              { name: 'All-Inclusive Seasonal', oldPrice: '$1,299', price: '$1,199', per: '/season', pop: true, promo: 'SAVE $100', features: ['Weekly mowing (~26 cuts)', '4× weed control', '4× fertilizer', 'Spring + Fall cleanup'] },
+              { name: 'Per Cut', price: '$49', per: '/cut', features: ['Professional mowing', 'String trimming & edging', 'Blower cleanup', 'No commitment required'] },
+              { name: 'Seasonal Pro', price: '$769', per: '/season', features: ['Weekly May–Aug (16 cuts)', 'Biweekly Sep–Oct (4 cuts)', '~$38/cut effective', 'Priority scheduling'] },
+              { name: 'All-Inclusive Seasonal', price: '$1,299', per: '/season', pop: true, features: ['Weekly mowing (~26 cuts)', '4× weed control', '4× fertilizer', 'Spring + Fall cleanup'] },
             ].map((plan, i) => (
               <div key={i} className={`rounded-2xl p-6 relative ${plan.pop ? 'bg-green-600 text-white ring-4 ring-green-300 scale-105' : 'bg-white border border-gray-200'}`}>
                 {plan.pop && <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Most Popular</div>}
-                {plan.promo && <div className={`text-xs font-bold px-3 py-1 rounded-lg mb-2 inline-block ${plan.pop ? 'bg-yellow-400 text-yellow-900' : 'bg-green-100 text-green-700'}`}>🌿 {plan.promo}</div>}
                 <h3 className={`text-lg font-bold mt-1 ${plan.pop ? 'text-white' : 'text-gray-900'}`}>{plan.name}</h3>
                 <div className="mt-3 mb-4">
                   <span className={`text-xs block mb-0.5 ${plan.pop ? 'text-green-300' : 'text-gray-400'}`}>Starting from</span>
-                  {plan.oldPrice && <span className={`text-lg line-through mr-2 ${plan.pop ? 'text-green-200' : 'text-gray-400'}`}>{plan.oldPrice}</span>}
                   <span className={`text-3xl font-extrabold ${plan.pop ? 'text-white' : 'text-gray-900'}`}>{plan.price}</span>
                   <span className={`text-sm ${plan.pop ? 'text-green-200' : 'text-gray-500'}`}>{plan.per}</span>
                 </div>
@@ -279,7 +156,7 @@ export default function Home({ onQuote }) {
                     plan.pop ? 'bg-white text-green-700 hover:bg-green-50' : 'bg-green-600 text-white hover:bg-green-700'
                   }`}
                 >
-                  {plan.promo ? 'Lock In Early Bird Price' : 'Get Quote'}
+                  Get Quote
                 </button>
               </div>
             ))}

@@ -26,6 +26,8 @@ const routes = [
   '/gallery',
   '/privacy',
   '/thank-you',
+  '/blog',
+  '/terms',
 ]
 
 console.log('\n🚀  GreenGuard London — SSR Pre-rendering (no Chrome needed)\n')
@@ -106,7 +108,7 @@ if (failed) {
 // ── Verification ─────────────────────────────────────────────────────────────
 console.log('\n🔍  Verifying output...\n')
 const checks = [
-  { file: 'index.html',          keyword: 'GreenGuard',  label: 'Homepage'  },
+  { file: 'index.html',          keyword: 'Greenguard',  label: 'Homepage'  },
   { file: 'pricing/index.html',  keyword: '$',           label: 'Pricing'   },
   { file: 'services/index.html', keyword: 'Lawn',        label: 'Services'  },
   { file: 'contact/index.html',  keyword: 'contact',     label: 'Contact'   },

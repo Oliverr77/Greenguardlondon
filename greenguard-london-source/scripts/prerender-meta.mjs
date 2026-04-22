@@ -25,7 +25,7 @@ const routes = [
   {
     path: '/',
     title: 'GreenGuard London | Professional Lawn Care & Landscape Services | London, ON',
-    description: 'Professional lawn care and landscape services in London, Ontario. Seasonal packages from $479. Weekly mowing, weed control, fertilizer programs. From the team behind SnowGuard London. Book before April 30, 2026.',
+    description: 'Professional lawn care and landscape services in London, Ontario. Seasonal packages from $599. Weekly mowing, weed control, fertilizer programs. From the team behind SnowGuard London.',
     keywords: 'lawn mowing London Ontario, landscaping London ON, lawn care London Ontario, lawn mowing cost London, weed control London, fertilization London ON, seasonal lawn package London Ontario, GreenGuard London',
   },
   {
@@ -37,7 +37,7 @@ const routes = [
   {
     path: '/pricing',
     title: 'Lawn Care Pricing London ON | Seasonal Packages from $479 | GreenGuard London',
-    description: 'Transparent lawn care pricing for London, Ontario. Per cut from $49, seasonal packages from $479 with 20% Early Bird discount. Combo packages from $999. No hidden fees.',
+    description: 'Transparent lawn care pricing for London, Ontario. Per cut from $49, seasonal packages from $599. Combo packages from $999. No hidden fees.',
     keywords: 'lawn mowing cost London Ontario, lawn care pricing London ON, affordable lawn care London, seasonal lawn package London Ontario, weekly lawn mowing price London',
   },
   {
@@ -95,7 +95,7 @@ const template = readFileSync(join(distDir, 'index.html'), 'utf-8')
 
 function generateHtml(route) {
   let html = template
-  const url = route.path === '/' ? baseUrl + '/' : baseUrl + route.path
+  const url = route.path === '/' ? baseUrl + '/' : baseUrl + route.path + '/'
 
   // Replace <title>
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${route.title}</title>`)

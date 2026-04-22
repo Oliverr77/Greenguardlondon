@@ -28,6 +28,8 @@ const routes = [
   '/gallery',
   '/privacy',
   '/thank-you',
+  '/blog',
+  '/terms',
 ]
 
 const DIST_DIR = path.join(__dirname, 'dist')

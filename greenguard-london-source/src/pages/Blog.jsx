@@ -8,7 +8,7 @@ const blogSchema = [
     headline: 'Spring Lawn Care Guide 2026: Prepare Your London, ON Property',
     description:
       'Step-by-step spring lawn care tips for Ontario properties. Learn dethatching, fertilization, and weed control from Greenguard London experts.',
-    author: { '@type': 'Organization', name: 'Greenguard London' },
+    author: { '@type': 'Person', name: 'GreenGuard London Team' },
     publisher: {
       '@type': 'Organization',
       name: 'Greenguard London',

@@ -193,19 +193,6 @@ export default function Services({ onQuote }) {
         </div>
       </section>
 
-      {/* SUMMER 2026 PROMO START: Remove after April 30, 2026 */}
-      <section className="py-12 bg-[#1a1a1a] text-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400 text-yellow-900 text-xs font-extrabold uppercase tracking-widest px-5 py-2 rounded-full mb-4">
-            Limited Time — Spring 2026 Offer
-          </div>
-          <h2 className="text-2xl lg:text-3xl font-bold mb-3">Book Before April 30 &amp; Save Big</h2>
-          <p className="text-gray-400 mb-6">10% off any seasonal plan · $100 off any combo package</p>
-          <button onClick={onQuote} className="btn-primary text-base">Claim My Discount</button>
-          <p className="text-gray-500 text-xs mt-4">Limited spots available — offer ends April 30, 2026</p>
-        </div>
-      </section>
-      {/* SUMMER 2026 PROMO END */}
 
       {/* Why London Homeowners Choose Greenguard */}
       <section className="py-16 bg-white">

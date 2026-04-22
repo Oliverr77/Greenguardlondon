@@ -1,6 +1,6 @@
 import SEO from '../components/SEO'
 import { Link } from 'react-router-dom'
-import { CheckCircle, Phone, Mail, Star, Shield, Sparkles, Tag } from 'lucide-react'
+import { CheckCircle, Phone, Mail, Star, Shield } from 'lucide-react'
 
 const addons = [
   { name: 'Spring Cleanup', price: 'Starting at $149', sub: 'Debris removal, bed prep, first mow of season.' },
@@ -30,16 +30,6 @@ export default function Pricing({ onQuote }) {
         </div>
       </section>
 
-      {/* SUMMER 2026 PROMO START: Remove after April 30, 2026 */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-[#2E7D32] text-white py-3.5 px-6 text-center text-sm font-semibold">
-          🌿 EARLY BIRD: Save 10% on any seasonal plan. Book before April 30.
-        </div>
-        <div className="bg-[#1a1a1a] text-green-400 py-3.5 px-6 text-center text-sm font-semibold">
-          💰 SAVE $100 — Book any combo package before April 30 and save $100 instantly.
-        </div>
-      </div>
-      {/* SUMMER 2026 PROMO END */}
 
       {/* ===== SECTION 1: PER CUT ===== */}
       <section className="py-14 bg-white">
@@ -102,21 +92,15 @@ export default function Pricing({ onQuote }) {
 
             {/* Biweekly Seasonal */}
             <div className="bg-white border-2 border-gray-200 rounded-2xl p-7 flex flex-col">
-              {/* SUMMER 2026 PROMO START */}
-              <div className="bg-green-100 text-green-700 text-xs font-extrabold px-3 py-1.5 rounded-full inline-flex items-center gap-1 self-start mb-3">
-                <Tag size={11} /> EARLY BIRD — SAVE $50
-              </div>
-              {/* SUMMER 2026 PROMO END */}
               <div className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-1">Budget Friendly</div>
               <h3 className="text-xl font-extrabold text-gray-900 mb-2">Biweekly Seasonal</h3>
               <p className="text-gray-500 text-sm mb-5 leading-relaxed">Regular bi-weekly mowing all season long. Great for lower-maintenance lawns. ~13 cuts April–October.</p>
               <div className="mb-5">
                 <span className="text-xs text-gray-400 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-gray-900">$499</span>
+                <span className="text-4xl font-extrabold text-gray-900">$549</span>
                 <span className="text-gray-400 text-sm">/season</span>
                 <div className="text-sm mt-1">
-                  <span className="text-gray-400 line-through">$549</span>
-                  <span className="text-green-600 font-bold ml-2">~$38/cut effective</span>
+                  <span className="text-green-600 font-bold">~$42/cut effective</span>
                 </div>
                 <div className="text-xs text-gray-500 mt-0.5">If purchased separately: $585</div>
               </div>
@@ -135,7 +119,7 @@ export default function Pricing({ onQuote }) {
                 ))}
               </ul>
               <button onClick={onQuote} className="w-full py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition">
-                Lock In Early Bird Pricing →
+                Get a Free Quote →
               </button>
             </div>
 
@@ -144,21 +128,15 @@ export default function Pricing({ onQuote }) {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-extrabold px-5 py-1.5 rounded-full uppercase tracking-wider shadow whitespace-nowrap flex items-center gap-1">
                 <Star size={12} /> Smart Saver
               </div>
-              {/* SUMMER 2026 PROMO START */}
-              <div className="bg-yellow-400 text-yellow-900 text-xs font-extrabold px-3 py-1.5 rounded-full inline-flex items-center gap-1 self-start mb-3 mt-2">
-                EARLY BIRD — SAVE $70
-              </div>
-              {/* SUMMER 2026 PROMO END */}
-              <div className="text-sm font-bold uppercase tracking-widest text-green-300 mb-1">Smart Saver</div>
+              <div className="text-sm font-bold uppercase tracking-widest text-green-300 mb-1 mt-2">Smart Saver</div>
               <h3 className="text-xl font-extrabold text-white mb-2">Seasonal Pro</h3>
               <p className="text-green-200 text-sm mb-5 leading-relaxed">Weekly May–Aug (16 cuts) + Biweekly Sep–Oct (4 cuts) = 20 cuts total. Weekly when your lawn grows fast, biweekly when it slows down.</p>
               <div className="mb-3">
                 <span className="text-xs text-green-300 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$699</span>
+                <span className="text-4xl font-extrabold text-white">$769</span>
                 <span className="text-green-300 text-sm">/season</span>
                 <div className="text-sm mt-1">
-                  <span className="text-green-200 line-through">$769</span>
-                  <span className="text-yellow-300 font-bold ml-2">~$35/cut effective</span>
+                  <span className="text-yellow-300 font-bold">~$38/cut effective</span>
                 </div>
                 <div className="text-xs text-green-300 mt-0.5">If purchased separately: $900</div>
               </div>
@@ -180,19 +158,10 @@ export default function Pricing({ onQuote }) {
                 ))}
               </ul>
               <button onClick={onQuote} className="w-full py-3 rounded-full bg-white text-green-700 font-bold hover:bg-green-50 transition">
-                Lock In Early Bird Pricing →
+                Get a Free Quote →
               </button>
             </div>
           </div>
-
-          {/* SUMMER 2026 PROMO START */}
-          <div className="mt-8 bg-[#E8F5E9] border-l-4 border-green-600 rounded-r-xl p-5">
-            <p className="text-sm text-gray-700">
-              ✅ <strong className="text-gray-900">Early Bird Special:</strong> Save 10% on any seasonal plan when you book before April 30, 2026. All plans include mowing, edge trimming, string trimming, and blower cleanup every visit.
-            </p>
-          </div>
-          <p className="text-center text-sm text-orange-600 font-semibold mt-4">⏰ Early Bird pricing ends April 30, 2026. Spots are filling up — secure yours today.</p>
-          {/* SUMMER 2026 PROMO END */}
 
           <div className="mt-6 bg-green-50 border border-green-200 rounded-xl p-5 text-center">
             <p className="text-sm text-gray-700">
@@ -233,15 +202,6 @@ export default function Pricing({ onQuote }) {
             <p className="text-gray-500 text-sm">Bundle mowing, cleanups, and treatments for the best possible value. Less to manage, more to enjoy.</p>
           </div>
 
-          {/* SUMMER 2026 PROMO START */}
-          <div className="bg-[#1a1a1a] border-l-4 border-green-500 rounded-r-xl p-5 mb-8">
-            <p className="text-sm text-white">
-              💰 <strong>Early Bird Combo Deal: Save $100</strong> on any combo package. All-Inclusive Seasonal Care starting from $1,199, Year-Round Protection starting from $1,899. Book before April 30, 2026.
-            </p>
-          </div>
-          <p className="text-center text-sm text-orange-600 font-semibold mb-8">⏰ Early Bird pricing ends April 30, 2026. Limited spots available — secure yours today.</p>
-          {/* SUMMER 2026 PROMO END */}
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
             {/* All-Inclusive Seasonal */}
@@ -249,19 +209,14 @@ export default function Pricing({ onQuote }) {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-extrabold px-5 py-1.5 rounded-full uppercase tracking-wider shadow whitespace-nowrap flex items-center gap-1">
                 <Star size={12} /> Most Popular — Best Value
               </div>
-              {/* SUMMER 2026 PROMO START */}
-              <div className="bg-yellow-400 text-yellow-900 text-xs font-extrabold px-3 py-1.5 rounded-full inline-flex items-center gap-1 self-start mb-3 mt-2">
-                EARLY BIRD — SAVE $100
-              </div>
-              {/* SUMMER 2026 PROMO END */}
-              <div className="text-xs font-bold uppercase tracking-widest text-green-300 mb-1">All-Inclusive</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-green-300 mb-1 mt-2">All-Inclusive</div>
               <h3 className="text-lg font-extrabold text-white mb-2">All-Inclusive Seasonal Care</h3>
               <p className="text-green-200 text-sm mb-4 leading-relaxed">Weekly mowing all season + weed control + fertilizer + both cleanups. Everything done for you.</p>
               <div className="mb-5">
                 <span className="text-xs text-green-300 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$1,199</span>
+                <span className="text-4xl font-extrabold text-white">$1,299</span>
                 <span className="text-green-300 text-sm">/season</span>
-                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,576 — <span className="text-yellow-300 font-bold">You save $377</span></div>
+                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,576 — <span className="text-yellow-300 font-bold">You save $277</span></div>
               </div>
               <ul className="space-y-2 flex-1 mb-7">
                 {[
@@ -278,25 +233,20 @@ export default function Pricing({ onQuote }) {
                 ))}
               </ul>
               <button onClick={onQuote} className="w-full py-3 rounded-full bg-white text-green-700 font-bold hover:bg-green-50 transition">
-                Lock In $100 Savings →
+                Get a Free Quote →
               </button>
             </div>
 
             {/* Year-Round Property Protection */}
             <div className="relative bg-[#1a1a1a] border-2 border-green-500 rounded-2xl p-7 flex flex-col text-white shadow-2xl">
-              {/* SUMMER 2026 PROMO START */}
-              <div className="bg-green-500 text-white text-xs font-extrabold px-3 py-1.5 rounded-full inline-flex items-center gap-1 self-start mb-3">
-                <Sparkles size={11} /> EARLY BIRD — SAVE $100
-              </div>
-              {/* SUMMER 2026 PROMO END */}
               <div className="text-xs font-bold uppercase tracking-widest text-green-400 mb-1">Premium — Exclusive</div>
               <h3 className="text-lg font-extrabold text-white mb-2">Year-Round Property Protection</h3>
               <p className="text-gray-400 text-sm mb-4 leading-relaxed">Greenguard lawn care (summer) + SnowGuard snow removal (winter). The ONLY year-round property care package in London, ON.</p>
               <div className="mb-5">
                 <span className="text-xs text-green-400 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$1,899</span>
+                <span className="text-4xl font-extrabold text-white">$1,999</span>
                 <span className="text-green-400 text-sm">/year</span>
-                <div className="text-sm mt-1 text-gray-400">If purchased separately: $2,399+ — <span className="text-green-400 font-bold">You save $500+</span></div>
+                <div className="text-sm mt-1 text-gray-400">If purchased separately: $2,399+ — <span className="text-green-400 font-bold">You save $400+</span></div>
               </div>
               <ul className="space-y-2 flex-1 mb-7">
                 {[
@@ -312,7 +262,7 @@ export default function Pricing({ onQuote }) {
                 ))}
               </ul>
               <button onClick={onQuote} className="w-full py-3 rounded-full bg-green-500 text-white font-bold hover:bg-green-400 transition">
-                Lock In $100 Savings →
+                Get a Free Quote →
               </button>
             </div>
 
@@ -363,7 +313,7 @@ export default function Pricing({ onQuote }) {
       {/* Disclaimer */}
       <div className="bg-gray-100 py-4 px-4">
         <p className="text-xs text-gray-400 text-center max-w-4xl mx-auto">
-          All prices shown are starting rates for standard residential properties in London, ON. Final pricing based on property size, condition, and requirements. All prices in CAD. HST not included. Early bird pricing valid for new signups before April 30, 2026.
+          All prices shown are starting rates for standard residential properties in London, ON. Final pricing based on property size, condition, and requirements. All prices in CAD. HST not included.
         </p>
       </div>
     </>

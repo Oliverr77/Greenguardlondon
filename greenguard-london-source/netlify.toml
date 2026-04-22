@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm run build:full"
   publish = "dist"
 
 # Redirect www to non-www (301 permanent)

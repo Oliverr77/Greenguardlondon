@@ -29,11 +29,6 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      {/* SUMMER 2026 PROMO START: Remove after April 30, 2026 */}
-      <Link to="/pricing" className="block bg-[#2E7D32] text-white text-center py-2.5 px-4 text-sm font-semibold hover:bg-[#1B5E20] transition">
-        🌿 Summer 2026 Launch: Save 10% on Seasonal Plans + $100 Off Combo Packages — Book Before April 30th! →
-      </Link>
-      {/* SUMMER 2026 PROMO END */}
       <Header onQuote={() => setShowQuote(true)} />
       <main className="flex-1">
         <Routes>
