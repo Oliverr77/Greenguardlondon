@@ -104,6 +104,23 @@ export default function Privacy() {
             or call <a href="tel:+12262128555" className="text-green-600 hover:underline">(226) 212-8555</a>.
           </p>
 
+          {/* SMS Messaging Terms & Conditions */}
+          <h2 className="text-xl font-bold text-gray-900 mt-10 mb-3">SMS Messaging Terms &amp; Conditions</h2>
+          <ol className="space-y-4 text-gray-600 leading-relaxed mb-8 list-decimal list-outside pl-5">
+            <li>The messaging program consists of general conversational messaging to answer questions and provide support to customers, promotional offers or discounts, and promotion of our products/services.</li>
+            <li>You can cancel the SMS service at any time. Just text STOP to the phone number from which you received messages. After you send STOP, we will confirm you have been unsubscribed. You will receive no further messages. To rejoin, simply opt in again on our website.</li>
+            <li>If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or contact us directly at <a href="mailto:info@greenguardlondon.ca" className="text-green-600 hover:underline">info@greenguardlondon.ca</a>.</li>
+            <li>Carriers are not liable for delayed or undelivered messages.</li>
+            <li>Message and data rates may apply for any messages sent to you from us and to us from you. Message frequency will vary based on communication needs. Contact your wireless provider for questions about your text plan or data plan.</li>
+            <li>For privacy questions, please read our full privacy policy on this page.</li>
+          </ol>
+
+          {/* Data Sharing Disclosure */}
+          <h2 className="text-xl font-bold text-gray-900 mt-10 mb-3">Data Sharing Disclosure</h2>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            Customer data is not shared with third parties for promotional or marketing purposes. Mobile opt-in and consent information are never shared with anyone for any purpose. Any information sharing mentioned elsewhere in this policy excludes mobile opt-in data and phone numbers provided for SMS communication.
+          </p>
+
           {/* Contact */}
           <h2 className="text-xl font-bold text-gray-900 mt-10 mb-3">Contact Us</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
