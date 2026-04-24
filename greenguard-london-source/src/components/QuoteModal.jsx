@@ -89,13 +89,11 @@ export default function QuoteModal({ onClose }) {
                   className="mt-0.5 w-4 h-4 shrink-0 accent-green-600"
                 />
                 <span className="text-sm text-gray-700 font-medium leading-snug">
-                  I agree to receive SMS messages from Greenguard London regarding my service request.
+                  I agree to receive SMS messages from GreenGuard London at the number provided. Messages may include service quotes, appointment confirmations, reminders, and occasional promotions. Message frequency varies. Message &amp; data rates may apply. Reply STOP to unsubscribe, HELP for help.
                 </span>
               </label>
               <p className="text-xs text-gray-500 leading-relaxed">
-                By submitting this form, you agree to receive SMS messages from Greenguard London, including appointment reminders, service updates, and occasional promotions. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for assistance.{' '}
-                <a href="/privacy" className="underline hover:text-green-600" onClick={onClose}>Privacy Policy</a> and{' '}
-                <a href="/terms" className="underline hover:text-green-600" onClick={onClose}>Terms &amp; Conditions</a>.
+                By checking this box, you provide express written consent to receive SMS messages from GreenGuard London. We will never share your information with third parties.
               </p>
             </div>
 
