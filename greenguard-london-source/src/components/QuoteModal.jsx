@@ -89,7 +89,7 @@ export default function QuoteModal({ onClose }) {
                   className="mt-0.5 w-4 h-4 shrink-0 accent-green-600"
                 />
                 <span className="text-sm text-gray-700 font-medium leading-snug">
-                  By checking this box, you agree to receive customer care, account notification, and service-related messages from GREENGUARD LONDON. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for assistance. See our Privacy Policy and Terms at https://greenguardlondon.ca/privacy.
+                  By checking this box, you agree to receive informational and marketing text messages from GREENGUARD LONDON. Message frequency varies. Message and data rates may apply. Reply STOP for help or to opt out. See our privacy policy and terms at https://greenguardlondon.ca/privacy.
                 </span>
               </label>
             </div>
