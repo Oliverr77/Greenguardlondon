@@ -106,6 +106,9 @@ export default function Privacy() {
 
           {/* SMS Messaging Terms & Conditions */}
           <h2 className="text-xl font-bold text-gray-900 mt-10 mb-3">SMS Messaging Terms &amp; Conditions</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            By opting in, you agree to receive customer care, account notification, and service-related text messages from GreenGuard London. Message frequency varies. Message and data rates may apply.
+          </p>
           <ol className="space-y-4 text-gray-600 leading-relaxed mb-8 list-decimal list-outside pl-5">
             <li>The messaging program consists of general conversational messaging to answer questions and provide support to customers, promotional offers or discounts, and promotion of our products/services.</li>
             <li>You can cancel the SMS service at any time. Just text STOP to the phone number from which you received messages. After you send STOP, we will confirm you have been unsubscribed. You will receive no further messages. To rejoin, simply opt in again on our website.</li>
