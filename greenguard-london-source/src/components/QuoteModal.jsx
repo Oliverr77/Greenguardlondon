@@ -92,9 +92,6 @@ export default function QuoteModal({ onClose }) {
                   By checking this box, you agree to receive customer care, account notification, and service-related messages from GREENGUARD LONDON. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for assistance. See our Privacy Policy and Terms at https://greenguardlondon.ca/privacy.
                 </span>
               </label>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                By checking this box, you provide express written consent to receive SMS messages from GreenGuard London. We will never share your information with third parties.
-              </p>
             </div>
 
             <button type="submit" className="btn-primary w-full mt-1">
