@@ -78,7 +78,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} name="contact" className="bg-gray-50 rounded-2xl p-8 space-y-4">
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden><input name="bot-field" /></div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Send Us a Message</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Request a Free Quote</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input required name="name" placeholder="Full Name" value={form.name} onChange={update('name')} className="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
                   <input required name="phone" placeholder="Phone Number" value={form.phone} onChange={update('phone')} className="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
@@ -110,18 +110,16 @@ export default function Contact() {
                       onChange={e => setSmsConsent(e.target.checked)}
                       className="mt-0.5 w-4 h-4 shrink-0 accent-green-600"
                     />
-                    <span className="text-sm text-gray-700 font-medium leading-snug">
-                      I agree to receive SMS messages from Greenguard London regarding my service request.
+                    <span className="text-sm text-gray-700 leading-snug">
+                      I agree to receive informational and marketing text messages from GREENGUARD LONDON to the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help and STOP to opt out. Consent is not a condition of purchase. We do not share your mobile opt-in information with anyone. See our Privacy Policy and Terms at https://greenguardlondon.ca/privacy.
                     </span>
                   </label>
-                  <p className="text-xs text-gray-500 leading-relaxed">
-                    By submitting this form, you agree to receive SMS messages from Greenguard London, including appointment reminders, service updates, and occasional promotions. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for assistance.{' '}
-                    <a href="/privacy" className="text-green-600 hover:underline">Privacy Policy</a>
-                    {' '}and{' '}
-                    <a href="/terms" className="text-green-600 hover:underline">Terms &amp; Conditions</a>.
-                  </p>
+                  <div className="flex gap-4 text-xs pl-7">
+                    <a href="/privacy" className="text-green-600 hover:underline font-medium">Privacy Policy</a>
+                    <a href="/terms" className="text-green-600 hover:underline font-medium">Terms &amp; Conditions</a>
+                  </div>
                 </div>
-                <button type="submit" className="btn-primary w-full">Send Message</button>
+                <button type="submit" className="btn-primary w-full">Request Free Quote</button>
               </form>
           </div>
         </div>
