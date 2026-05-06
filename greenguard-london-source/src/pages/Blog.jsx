@@ -39,7 +39,7 @@ const blogSchema = [
         name: 'How much does spring lawn cleanup cost in London Ontario?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Greenguard London spring cleanup packages start at $479 for the season. Single-visit spring cleanups are quoted on-site based on property size.',
+          text: 'Greenguard London spring cleanup starts from $199. Seasonal mowing packages start from $599/season. Single-visit spring cleanups are quoted based on property size.',
         },
       },
       {
@@ -202,10 +202,10 @@ export default function Blog() {
         <p className="mb-8">
           Our{' '}
           <Link to="/pricing" className="text-green-700 font-semibold hover:underline">
-            seasonal lawn care packages
+            seasonal mowing packages
           </Link>{' '}
-          start at $479 and include cleanup, mowing, fertilization, and weed control — everything
-          handled on a schedule so you don't have to think about it.
+          start at $599 and include mowing, trimming, edging, and blower cleanup every visit —
+          everything handled on a schedule so you don't have to think about it.
         </p>
 
         {/* H2 5 */}
@@ -246,7 +246,7 @@ export default function Blog() {
             },
             {
               q: 'How much does spring lawn cleanup cost in London Ontario?',
-              a: 'Greenguard London spring cleanup packages start at $479 for the season. Single-visit spring cleanups are quoted on-site based on property size.',
+              a: 'Greenguard London spring cleanup starts from $199. Seasonal mowing packages start from $599/season. Single-visit spring cleanups are quoted based on property size.',
             },
             {
               q: 'Is dethatching necessary every year?',

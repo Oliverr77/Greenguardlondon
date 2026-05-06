@@ -11,6 +11,7 @@ const nav = [
   { to: '/reviews', label: 'Our Promise' },
   { to: '/blog', label: 'Blog' },
   { to: '/faq', label: 'FAQ' },
+  { to: '/quote-calculator', label: 'Instant Quote' },
   { to: '/contact', label: 'Contact' },
 ]
 

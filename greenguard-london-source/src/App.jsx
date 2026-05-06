@@ -16,6 +16,7 @@ import Privacy from './pages/Privacy'
 import ThankYou from './pages/ThankYou'
 import Blog from './pages/Blog'
 import Terms from './pages/Terms'
+import QuoteCalculator from './pages/QuoteCalculator'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/quote-calculator" element={<QuoteCalculator onQuote={() => setShowQuote(true)} />} />
         </Routes>
       </main>
       <Footer />

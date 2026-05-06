@@ -67,15 +67,15 @@ export default function QuoteModal({ onClose }) {
               className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
             >
               <option value="">Select a Service</option>
-              <option>Per Cut Lawn Mowing ($49/cut)</option>
-              <option>Bi-Weekly Seasonal Package (from $599)</option>
-              <option>Weekly Seasonal Package (from $749)</option>
-              <option>Premium Weekly Package (from $899)</option>
-              <option>All-Inclusive Seasonal Care (from $1,100)</option>
-              <option>Year-Round Property Protection (from $2,000)</option>
-              <option>Weed Control & Fertilization</option>
-              <option>Spring Cleanup</option>
-              <option>Fall Cleanup</option>
+              <option>Per Cut Lawn Mowing (from $49/cut)</option>
+              <option>Biweekly Seasonal Package (from $599/season)</option>
+              <option>Seasonal Pro Package (from $849/season)</option>
+              <option>All-Inclusive Seasonal Care (from $1,199/season)</option>
+              <option>Year-Round Property Protection (from $1,899/year)</option>
+              <option>Weed Control (first application $34.99)</option>
+              <option>Fertilizer (first application $34.99)</option>
+              <option>Spring Cleanup (from $199)</option>
+              <option>Fall Cleanup (from $249)</option>
               <option>Landscaping & Garden Design</option>
               <option>Custom Quote</option>
               <option>General Inquiry</option>

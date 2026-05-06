@@ -87,16 +87,17 @@ export default function Contact() {
                 <input name="address" placeholder="Property Address (optional)" value={form.address} onChange={update('address')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
                 <select name="serviceType" value={form.serviceType} onChange={update('serviceType')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
                   <option value="">Select a Service (optional)</option>
-                  <option>Per Cut Lawn Mowing (starting from $45/cut)</option>
-                  <option>Biweekly Seasonal Plan (starting from $499/season)</option>
-                  <option>Seasonal Pro (starting from $699/season)</option>
-                  <option>All-Inclusive Seasonal Care (starting from $1,199/season)</option>
-                  <option>Year-Round Property Protection (starting from $1,899/year)</option>
-                  <option>Weed Control & Fertilization</option>
-                  <option>Spring Cleanup</option>
-                  <option>Fall Cleanup</option>
+                  <option>Per Cut Lawn Mowing (from $49/cut)</option>
+                  <option>Biweekly Seasonal Package (from $599/season)</option>
+                  <option>Seasonal Pro Package (from $849/season)</option>
+                  <option>All-Inclusive Seasonal Care (from $1,199/season)</option>
+                  <option>Year-Round Property Protection (from $1,899/year)</option>
+                  <option>Weed Control (first application $34.99)</option>
+                  <option>Fertilizer (first application $34.99)</option>
+                  <option>Spring Cleanup (from $199)</option>
+                  <option>Fall Cleanup (from $249)</option>
                   <option>Landscaping & Garden Design</option>
-                  <option>Custom Quote — Large/Commercial Property</option>
+                  <option>Custom Quote</option>
                   <option>General Inquiry</option>
                 </select>
                 <textarea name="message" rows={4} placeholder="Your Message" value={form.message} onChange={update('message')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none" />

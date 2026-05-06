@@ -132,8 +132,8 @@ export default function Home({ onQuote }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
               { name: 'Per Cut', price: '$49', per: '/cut', features: ['Professional mowing', 'String trimming & edging', 'Blower cleanup', 'No commitment required'] },
-              { name: 'Seasonal Pro', price: '$769', per: '/season', features: ['Weekly May–Aug (16 cuts)', 'Biweekly Sep–Oct (4 cuts)', '~$38/cut effective', 'Priority scheduling'] },
-              { name: 'All-Inclusive Seasonal', price: '$1,299', per: '/season', pop: true, features: ['Weekly mowing (~26 cuts)', '4× weed control', '4× fertilizer', 'Spring + Fall cleanup'] },
+              { name: 'Seasonal Pro', price: '$849', per: '/season', features: ['Weekly May–Aug (16 cuts)', 'Biweekly Sep–Oct (4 cuts)', '20 total cuts', 'Priority scheduling'] },
+              { name: 'All-Inclusive Seasonal', price: '$1,199', per: '/season', pop: true, features: ['Full seasonal mowing (20 cuts)', 'Spring cleanup included', 'Fall cleanup included', 'Priority scheduling'] },
             ].map((plan, i) => (
               <div key={i} className={`rounded-2xl p-6 relative ${plan.pop ? 'bg-green-600 text-white ring-4 ring-green-300 scale-105' : 'bg-white border border-gray-200'}`}>
                 {plan.pop && <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Most Popular</div>}

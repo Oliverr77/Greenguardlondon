@@ -30,6 +30,7 @@ const routes = [
   '/thank-you',
   '/blog',
   '/terms',
+  '/quote-calculator',
 ]
 
 const DIST_DIR = path.join(__dirname, 'dist')

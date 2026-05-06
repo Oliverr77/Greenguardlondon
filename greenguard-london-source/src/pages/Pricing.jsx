@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom'
 import { CheckCircle, Phone, Mail, Star, Shield } from 'lucide-react'
 
 const addons = [
-  { name: 'Spring Cleanup', price: 'Starting at $149', sub: 'Debris removal, bed prep, first mow of season.' },
-  { name: 'Fall Cleanup', price: 'Starting at $199', sub: 'Leaf removal, bed winterizing, final season mow.' },
-  { name: 'Weed Control (per application)', price: 'Starting at $49', sub: 'Targeted eco-friendly weed treatment.' },
-  { name: 'Weed Control — Full Season (4 apps)', price: 'Starting at $179', sub: 'Seasonal weed control program, April–October.' },
-  { name: 'Fertilizer Program (per application)', price: 'Starting at $65', sub: 'Seasonal fertilization for a lush, healthy lawn.' },
+  { name: 'Spring Cleanup', price: 'Starting from $199', sub: 'Debris removal, bed prep, first mow of season.' },
+  { name: 'Fall Cleanup', price: 'Starting from $249', sub: 'Leaf removal, bed winterizing, final season mow.' },
+  { name: 'Weed Control', price: 'First application $34.99', sub: 'Recommended 3–4 applications per season. Subsequent applications quoted based on lawn size.' },
+  { name: 'Fertilizer', price: 'First application $34.99', sub: 'Recommended 3–4 applications per season. Subsequent applications quoted based on lawn size.' },
   { name: 'Lawn Aeration', price: 'Starting at $99', sub: 'Core aeration to improve drainage and root growth.' },
   { name: 'Garden Bed Maintenance', price: 'Starting at Custom quote', sub: 'Weeding, mulching, edging, and seasonal care.' },
 ]
@@ -17,7 +16,7 @@ export default function Pricing({ onQuote }) {
     <>
       <SEO
         title="Lawn Care Pricing & Seasonal Packages | Greenguard London"
-        description="Affordable lawn care packages starting at $45/cut. Seasonal Pro, All-Inclusive, and Year-Round Protection plans available. Free quote."
+        description="Affordable lawn care packages starting at $49/cut. Seasonal Pro, All-Inclusive, and Year-Round Protection plans available. Free quote."
         path="/pricing"
         keywords="lawn mowing cost London Ontario, lawn care pricing London ON, affordable lawn care London, seasonal lawn package London Ontario, lawn mowing price per cut London, weekly lawn mowing London ON"
       />
@@ -43,16 +42,14 @@ export default function Pricing({ onQuote }) {
           {/* 3 Tier Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[
-              { tier: 'STANDARD', price: '$45', per: '/cut', size: 'Up to 5,000 sq ft' },
-              { tier: 'LARGE', price: '$59', per: '/cut', size: '5,000–8,000 sq ft' },
-              { tier: 'OVERSIZED', price: '$79+', per: '/cut', size: '8,000+ sq ft', note: 'Custom quote available' },
+              { tier: 'Small', price: '$49', per: '/cut' },
+              { tier: 'Medium', price: '$59', per: '/cut' },
+              { tier: 'Large', price: '$79+', per: '/cut' },
             ].map((card, i) => (
               <div key={i} className={`rounded-2xl p-6 text-center border-2 ${i === 1 ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-white'}`}>
                 <div className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-3">{card.tier}</div>
                 <div className="text-xs text-gray-400 mb-0.5">Starting from</div>
                 <div className="text-4xl font-extrabold text-gray-900 mb-1">{card.price}<span className="text-lg font-normal text-gray-400">{card.per}</span></div>
-                <div className="text-sm text-gray-500 mt-1">{card.size}</div>
-                {card.note && <div className="text-xs text-green-600 font-semibold mt-1">{card.note}</div>}
               </div>
             ))}
           </div>
@@ -97,12 +94,12 @@ export default function Pricing({ onQuote }) {
               <p className="text-gray-500 text-sm mb-5 leading-relaxed">Regular bi-weekly mowing all season long. Great for lower-maintenance lawns. ~13 cuts April–October.</p>
               <div className="mb-5">
                 <span className="text-xs text-gray-400 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-gray-900">$549</span>
+                <span className="text-4xl font-extrabold text-gray-900">$599</span>
                 <span className="text-gray-400 text-sm">/season</span>
                 <div className="text-sm mt-1">
-                  <span className="text-green-600 font-bold">~$42/cut effective</span>
+                  <span className="text-green-600 font-bold">~$46/cut effective</span>
                 </div>
-                <div className="text-xs text-gray-500 mt-0.5">If purchased separately: $585</div>
+                <div className="text-xs text-gray-500 mt-0.5">If purchased separately: $637</div>
               </div>
               <ul className="space-y-3 flex-1 mb-7">
                 {[
@@ -133,12 +130,12 @@ export default function Pricing({ onQuote }) {
               <p className="text-green-200 text-sm mb-5 leading-relaxed">Weekly May–Aug (16 cuts) + Biweekly Sep–Oct (4 cuts) = 20 cuts total. Weekly when your lawn grows fast, biweekly when it slows down.</p>
               <div className="mb-3">
                 <span className="text-xs text-green-300 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$769</span>
+                <span className="text-4xl font-extrabold text-white">$849</span>
                 <span className="text-green-300 text-sm">/season</span>
                 <div className="text-sm mt-1">
-                  <span className="text-yellow-300 font-bold">~$38/cut effective</span>
+                  <span className="text-yellow-300 font-bold">~$42/cut effective</span>
                 </div>
-                <div className="text-xs text-green-300 mt-0.5">If purchased separately: $900</div>
+                <div className="text-xs text-green-300 mt-0.5">If purchased separately: $980</div>
               </div>
               <div className="bg-yellow-400/20 border border-yellow-400/40 rounded-lg px-4 py-2.5 mb-5">
                 <p className="text-yellow-200 text-sm font-bold text-center">The smart hybrid plan — weekly when it matters, biweekly when it doesn't!</p>
@@ -211,20 +208,18 @@ export default function Pricing({ onQuote }) {
               </div>
               <div className="text-xs font-bold uppercase tracking-widest text-green-300 mb-1 mt-2">All-Inclusive</div>
               <h3 className="text-lg font-extrabold text-white mb-2">All-Inclusive Seasonal Care</h3>
-              <p className="text-green-200 text-sm mb-4 leading-relaxed">Weekly mowing all season + weed control + fertilizer + both cleanups. Everything done for you.</p>
+              <p className="text-green-200 text-sm mb-4 leading-relaxed">Premium seasonal mowing + spring and fall cleanup in one package.</p>
               <div className="mb-5">
                 <span className="text-xs text-green-300 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$1,299</span>
+                <span className="text-4xl font-extrabold text-white">$1,199</span>
                 <span className="text-green-300 text-sm">/season</span>
-                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,576 — <span className="text-yellow-300 font-bold">You save $277</span></div>
+                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,297 — <span className="text-yellow-300 font-bold">You save $98</span></div>
               </div>
               <ul className="space-y-2 flex-1 mb-7">
                 {[
-                  'Weekly mowing (~26 cuts Apr–Oct)',
-                  '4× weed control applications',
-                  '4× fertilizer applications',
-                  'Spring cleanup ($149 value)',
-                  'Fall cleanup ($199 value)',
+                  'Full Seasonal Pro mowing (20 cuts)',
+                  'Spring cleanup included ($199 value)',
+                  'Fall cleanup included ($249 value)',
                   'Priority scheduling + locked-in pricing',
                 ].map((f, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-green-100">
@@ -244,7 +239,7 @@ export default function Pricing({ onQuote }) {
               <p className="text-gray-400 text-sm mb-4 leading-relaxed">Greenguard lawn care (summer) + SnowGuard snow removal (winter). The ONLY year-round property care package in London, ON.</p>
               <div className="mb-5">
                 <span className="text-xs text-green-400 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$1,999</span>
+                <span className="text-4xl font-extrabold text-white">$1,899</span>
                 <span className="text-green-400 text-sm">/year</span>
                 <div className="text-sm mt-1 text-gray-400">If purchased separately: $2,399+ — <span className="text-green-400 font-bold">You save $400+</span></div>
               </div>
