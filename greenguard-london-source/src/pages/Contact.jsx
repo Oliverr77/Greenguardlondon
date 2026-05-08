@@ -87,10 +87,10 @@ export default function Contact() {
                 <input name="address" placeholder="Property Address (optional)" value={form.address} onChange={update('address')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
                 <select name="serviceType" value={form.serviceType} onChange={update('serviceType')} className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
                   <option value="">Select a Service (optional)</option>
-                  <option>Per Cut Lawn Mowing (from $49/cut)</option>
+                  <option>Per Cut Lawn Mowing (from $59/cut)</option>
                   <option>Biweekly Seasonal Package (from $599/season)</option>
                   <option>Seasonal Pro Package (from $849/season)</option>
-                  <option>All-Inclusive Seasonal Care (from $1,199/season)</option>
+                  <option>All-Inclusive Seasonal Care (from $1,229/season)</option>
                   <option>Year-Round Property Protection (from $1,899/year)</option>
                   <option>Weed Control (first application $34.99)</option>
                   <option>Fertilizer (first application $34.99)</option>

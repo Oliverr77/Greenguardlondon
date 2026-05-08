@@ -16,33 +16,33 @@ const FLAT_RATE = ['Weed Control', 'Fertilizer']
 
 const TIERS = {
   'One-Time Cut': [
-    { label: 'Small Lawn', maxSqft: 3000, low: 49, high: 59, unit: '/cut' },
-    { label: 'Medium Lawn', maxSqft: 5000, low: 55, high: 79, unit: '/cut' },
-    { label: 'Large Lawn', maxSqft: Infinity, low: 69, high: 99, unit: '/cut' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 59, high: null, unit: '/cut' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 69, high: 89, unit: '/cut' },
+    { label: 'Large Lawn', maxSqft: Infinity, custom: true, unit: '/cut' },
   ],
   'Biweekly Seasonal': [
-    { label: 'Small Lawn', maxSqft: 3000, low: 549, high: 649, unit: '/season' },
-    { label: 'Medium Lawn', maxSqft: 5000, low: 599, high: 749, unit: '/season' },
-    { label: 'Large Lawn', maxSqft: Infinity, low: 699, high: 899, unit: '/season' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 599, high: 699, unit: '/season' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 699, high: 789, unit: '/season' },
+    { label: 'Large Lawn', maxSqft: Infinity, custom: true, unit: '/season' },
   ],
   'Seasonal Pro': [
-    { label: 'Small Lawn', maxSqft: 3000, low: 799, high: 899, unit: '/season' },
-    { label: 'Medium Lawn', maxSqft: 5000, low: 849, high: 999, unit: '/season' },
-    { label: 'Large Lawn', maxSqft: Infinity, low: 949, high: 1199, unit: '/season' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 879, high: 919, unit: '/season' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 899, high: 1069, unit: '/season' },
+    { label: 'Large Lawn', maxSqft: Infinity, custom: true, unit: '/season' },
   ],
   'All-Inclusive Seasonal': [
-    { label: 'Small Lawn', maxSqft: 3000, low: 1099, high: 1249, unit: '/season' },
-    { label: 'Medium Lawn', maxSqft: 5000, low: 1199, high: 1399, unit: '/season' },
-    { label: 'Large Lawn', maxSqft: Infinity, low: 1349, high: 1599, unit: '/season' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 1229, high: 1349, unit: '/season' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 1349, high: 1499, unit: '/season' },
+    { label: 'Large Lawn', maxSqft: Infinity, custom: true, unit: '/season' },
   ],
   'Spring Cleanup': [
-    { label: 'Small Lawn', maxSqft: 3000, low: 149, high: 199, unit: '' },
-    { label: 'Medium Lawn', maxSqft: 5000, low: 199, high: 249, unit: '' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 149, high: 199, unit: '' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 199, high: 249, unit: '' },
     { label: 'Large Lawn', maxSqft: Infinity, low: 249, high: 349, unit: '' },
   ],
   'Fall Cleanup': [
-    { label: 'Small Lawn', maxSqft: 3000, low: 199, high: 249, unit: '' },
-    { label: 'Medium Lawn', maxSqft: 5000, low: 249, high: 299, unit: '' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 199, high: 249, unit: '' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 249, high: 299, unit: '' },
     { label: 'Large Lawn', maxSqft: Infinity, low: 299, high: 399, unit: '' },
   ],
 }
@@ -74,7 +74,7 @@ const STEP_LABELS = ['Service', 'Lawn Size', 'Your Details', 'Your Quote']
 export default function QuoteCalculator({ onQuote }) {
   const [step, setStep] = useState(1)
   const [selectedService, setSelectedService] = useState(null)
-  const [sqft, setSqft] = useState(3000)
+  const [sqft, setSqft] = useState(2000)
   const [result, setResult] = useState(null)
   const [contactName, setContactName] = useState('')
   const [contactEmail, setContactEmail] = useState('')
@@ -92,7 +92,7 @@ export default function QuoteCalculator({ onQuote }) {
   const resetCalculator = () => {
     setStep(1)
     setSelectedService(null)
-    setSqft(3000)
+    setSqft(2000)
     setResult(null)
     setContactName('')
     setContactEmail('')
@@ -119,6 +119,7 @@ export default function QuoteCalculator({ onQuote }) {
 
   const formatEstimatedPrice = (r) => {
     if (!r) return ''
+    if (r.custom) return 'Custom Quote'
     return r.high
       ? `$${r.low.toLocaleString()} – $${r.high.toLocaleString()}`
       : `$${r.low}`
@@ -348,9 +349,9 @@ export default function QuoteCalculator({ onQuote }) {
               {/* Preset cards */}
               <div className="grid grid-cols-3 gap-3 mb-6">
                 {[
-                  { icon: '🏠', label: 'Small', sub: 'Under 3,000 sq ft', sub2: 'Townhouse / Semi', val: 2000, active: sqft <= 3000 },
-                  { icon: '🏡', label: 'Medium', sub: '3,000–5,000 sq ft', sub2: 'Standard Home', val: 4000, active: sqft > 3000 && sqft <= 5000 },
-                  { icon: '🏘️', label: 'Large', sub: 'Over 5,000 sq ft', sub2: 'Large Property', val: 6500, active: sqft > 5000 },
+                  { icon: '🏠', label: 'Small', sub: 'Under 2,500 sq ft', sub2: 'Townhouse / Semi', val: 1800, active: sqft <= 2500 },
+                  { icon: '🏡', label: 'Medium', sub: '2,500–4,000 sq ft', sub2: 'Standard Home', val: 3000, active: sqft > 2500 && sqft <= 4000 },
+                  { icon: '🏘️', label: 'Large', sub: 'Over 4,000 sq ft', sub2: 'Large Property', val: 5500, active: sqft > 4000 },
                 ].map(preset => (
                   <button
                     key={preset.label}
@@ -481,13 +482,22 @@ export default function QuoteCalculator({ onQuote }) {
 
                 {/* Price */}
                 <div className="text-center my-6">
-                  <div className="text-5xl font-extrabold">
-                    {result.high
-                      ? `$${result.low.toLocaleString()} – $${result.high.toLocaleString()}`
-                      : `$${result.low}`}
-                  </div>
-                  {result.unit && <div className="text-green-300 mt-1 text-sm">{result.unit}</div>}
-                  {result.sqft && <div className="text-green-400 text-sm mt-1">{result.sqft.toLocaleString()} sq ft lawn</div>}
+                  {result.custom ? (
+                    <>
+                      <div className="text-4xl font-extrabold">Custom Quote</div>
+                      <div className="text-green-300 mt-3 text-base leading-relaxed">For lawns over 4,000 sq ft, contact us for a personalized quote.</div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-5xl font-extrabold">
+                        {result.high
+                          ? `$${result.low.toLocaleString()} – $${result.high.toLocaleString()}`
+                          : `$${result.low}`}
+                      </div>
+                      {result.unit && <div className="text-green-300 mt-1 text-sm">{result.unit}</div>}
+                      {result.sqft && <div className="text-green-400 text-sm mt-1">{result.sqft.toLocaleString()} sq ft lawn</div>}
+                    </>
+                  )}
                 </div>
 
                 {/* What's included */}
@@ -503,16 +513,18 @@ export default function QuoteCalculator({ onQuote }) {
                 </div>
 
                 {/* Satellite warning */}
-                <div className="bg-yellow-400/20 border border-yellow-400/40 rounded-xl p-3 mb-5 text-sm text-yellow-200">
-                  ⚠️ Final price confirmed after property review. We verify your lawn via satellite — no surprises.
-                </div>
+                {!result.custom && (
+                  <div className="bg-yellow-400/20 border border-yellow-400/40 rounded-xl p-3 mb-5 text-sm text-yellow-200">
+                    ⚠️ Final price confirmed after property review. We verify your lawn via satellite — no surprises.
+                  </div>
+                )}
 
                 {/* CTA */}
                 <button
                   onClick={onQuote}
                   className="w-full bg-white text-green-800 font-bold py-4 rounded-full text-base hover:bg-green-50 transition shadow-lg"
                 >
-                  🔒 Lock In This Price — Request Service
+                  {result.custom ? '📞 Contact Us for Custom Quote' : '🔒 Lock In This Price — Request Service'}
                 </button>
               </div>
 

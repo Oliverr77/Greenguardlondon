@@ -3,11 +3,11 @@ import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 const faqs = [
-  { q: 'How much does lawn mowing cost in London, Ontario?', a: 'Greenguard London offers Per Cut mowing starting from $49 per visit with no contract. For regular seasonal service, we offer Biweekly Seasonal (starting from $599/season, ~13 cuts Apr–Oct) and Seasonal Pro (starting from $849/season, 20 cuts). For complete care, All-Inclusive Seasonal starts from $1,199/season. All prices are starting rates — final pricing depends on your property size and condition.' },
-  { q: 'What\'s the difference between the seasonal packages?', a: 'All seasonal packages include mowing, edge trimming, string trimming, and blower cleanup every visit from April to October. Biweekly Seasonal (from $599) provides bi-weekly mowing all season (~13 cuts). Seasonal Pro (from $849) combines weekly mowing May–August + biweekly September–October for 20 total cuts. All-Inclusive Seasonal (from $1,199) adds spring and fall cleanup to the Seasonal Pro mowing schedule.' },
+  { q: 'How much does lawn mowing cost in London, Ontario?', a: 'Greenguard London offers Per Cut mowing starting from $59 per visit with no contract. For regular seasonal service, we offer Biweekly Seasonal (starting from $599/season, ~13 cuts Apr–Oct) and Seasonal Pro (starting from $849/season, 20 cuts). For complete care, All-Inclusive Seasonal starts from $1,229/season. All prices are starting rates — final pricing depends on your property size and condition.' },
+  { q: 'What\'s the difference between the seasonal packages?', a: 'All seasonal packages include mowing, edge trimming, string trimming, and blower cleanup every visit from April to October. Biweekly Seasonal (from $599) provides bi-weekly mowing all season (~13 cuts). Seasonal Pro (from $849) combines weekly mowing May–August + biweekly September–October for 20 total cuts. All-Inclusive Seasonal (from $1,229) adds spring and fall cleanup to the Seasonal Pro mowing schedule.' },
   { q: 'What\'s included in the seasonal packages?', a: 'All seasonal packages include basic lawn maintenance only: professional mowing, edge trimming along sidewalks and driveways, string trimming, and blower cleanup. Weed control, fertilizer, and other services are available as add-ons you can add to any package.' },
   { q: 'Do you offer weed control and fertilizer?', a: 'Yes. We offer your first application of weed control or fertilizer for just $34.99 — a great way to try our service risk-free. We recommend 3–4 applications per season for best results. Subsequent applications are custom-quoted based on your lawn size. All products are eco-friendly and pet-safe.' },
-  { q: 'What is the All-Inclusive package?', a: 'The All-Inclusive Seasonal Care package starts at $1,199/season and combines premium seasonal mowing (Seasonal Pro schedule — 20 cuts) with spring cleanup and fall cleanup. Everything is handled for you in one package.' },
+  { q: 'What is the All-Inclusive package?', a: 'The All-Inclusive Seasonal Care package starts at $1,229/season and combines premium seasonal mowing (Seasonal Pro schedule — 20 cuts) with spring cleanup and fall cleanup. Everything is handled for you in one package.' },
   { q: 'What is the Year-Round Property Protection package?', a: 'Our Year-Round Property Protection starts at $1,899/year and combines Greenguard lawn care in summer with SnowGuard snow removal in winter. The only year-round property care package in London, ON.' },
   { q: 'When does the lawn care season start and end?', a: 'Our regular mowing season runs from April through October, depending on weather conditions. We also offer spring cleanup starting in early April and fall cleanup through November.' },
   { q: 'Do I need to sign a long-term contract?', a: 'No. Greenguard London operates on a flexible, no-contract basis. You can use our Per Cut option on demand, or book a seasonal package with no long-term lock-in.' },
@@ -35,7 +35,7 @@ export default function FAQ() {
     <>
       <SEO
         title="Lawn Care FAQ — London, Ontario | Greenguard London"
-        description="Frequently asked questions about lawn mowing costs, seasonal packages, weed control, and landscaping in London, Ontario. Per cut from $49, seasonal from $599. Get answers from Greenguard London."
+        description="Frequently asked questions about lawn mowing costs, seasonal packages, weed control, and landscaping in London, Ontario. Per cut from $59, seasonal from $599. Get answers from Greenguard London."
         path="/faq"
         keywords="lawn care FAQ London Ontario, lawn mowing cost London ON, seasonal lawn care package London, weed control questions London Ontario, spring cleanup London ON, Greenguard London FAQ"
       />

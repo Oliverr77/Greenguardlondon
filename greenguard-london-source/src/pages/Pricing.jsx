@@ -16,7 +16,7 @@ export default function Pricing({ onQuote }) {
     <>
       <SEO
         title="Lawn Care Pricing & Seasonal Packages | Greenguard London"
-        description="Affordable lawn care packages starting at $49/cut. Seasonal Pro, All-Inclusive, and Year-Round Protection plans available. Free quote."
+        description="Affordable lawn care packages starting at $59/cut. Seasonal Pro, All-Inclusive, and Year-Round Protection plans available. Free quote."
         path="/pricing"
         keywords="lawn mowing cost London Ontario, lawn care pricing London ON, affordable lawn care London, seasonal lawn package London Ontario, lawn mowing price per cut London, weekly lawn mowing London ON"
       />
@@ -42,14 +42,15 @@ export default function Pricing({ onQuote }) {
           {/* 3 Tier Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[
-              { tier: 'Small', price: '$49', per: '/cut' },
-              { tier: 'Medium', price: '$59', per: '/cut' },
-              { tier: 'Large', price: '$79+', per: '/cut' },
+              { tier: 'Small', sub: 'Under 2,500 sq ft', price: '$59', per: '/cut', note: 'Flat rate' },
+              { tier: 'Medium', sub: '2,500–4,000 sq ft', price: '$69–$89', per: '/cut', note: 'Starting from' },
+              { tier: 'Large', sub: 'Over 4,000 sq ft', price: 'Custom', per: '', note: 'Contact for quote' },
             ].map((card, i) => (
               <div key={i} className={`rounded-2xl p-6 text-center border-2 ${i === 1 ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-white'}`}>
-                <div className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-3">{card.tier}</div>
-                <div className="text-xs text-gray-400 mb-0.5">Starting from</div>
-                <div className="text-4xl font-extrabold text-gray-900 mb-1">{card.price}<span className="text-lg font-normal text-gray-400">{card.per}</span></div>
+                <div className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-1">{card.tier}</div>
+                <div className="text-xs text-gray-400 mb-1">{card.sub}</div>
+                <div className="text-xs text-gray-400 mb-0.5">{card.note}</div>
+                <div className="text-3xl font-extrabold text-gray-900 mb-1">{card.price}<span className="text-lg font-normal text-gray-400">{card.per}</span></div>
               </div>
             ))}
           </div>
@@ -165,6 +166,11 @@ export default function Pricing({ onQuote }) {
               <strong className="text-gray-900">All seasonal plans include basic mowing only.</strong> Want weed control, fertilizer, or cleanups? See Add-Ons below, or upgrade to a Combo Package for maximum value.
             </p>
           </div>
+          <div className="mt-4 bg-yellow-50 border border-yellow-300 rounded-xl p-5 text-center">
+            <p className="text-sm text-gray-800">
+              💡 <strong>Save 15%</strong> when you bundle any seasonal package with weed control or fertilizer. <button onClick={onQuote} className="text-green-700 font-semibold hover:underline">Contact us for a custom bundle quote →</button>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -211,9 +217,9 @@ export default function Pricing({ onQuote }) {
               <p className="text-green-200 text-sm mb-4 leading-relaxed">Premium seasonal mowing + spring and fall cleanup in one package.</p>
               <div className="mb-5">
                 <span className="text-xs text-green-300 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$1,199</span>
+                <span className="text-4xl font-extrabold text-white">$1,229</span>
                 <span className="text-green-300 text-sm">/season</span>
-                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,297 — <span className="text-yellow-300 font-bold">You save $98</span></div>
+                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,297 — <span className="text-yellow-300 font-bold">You save $68</span></div>
               </div>
               <ul className="space-y-2 flex-1 mb-7">
                 {[

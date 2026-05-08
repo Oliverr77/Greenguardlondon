@@ -8,10 +8,10 @@ const services = [
     title: 'Lawn Mowing',
     badge: 'Most Popular',
     badgeColor: 'bg-yellow-400 text-yellow-900',
-    price: 'Starting from $49 / cut',
+    price: 'Starting from $59 / cut',
     desc: 'Professional-grade mowing on your schedule. We adjust blade height by season, alternate patterns to prevent soil compaction, and leave crisp edges every visit.',
     features: [
-      'Per cut from $49 — no contract',
+      'Per cut from $59 — no contract',
       'Biweekly Seasonal from $599/season (~13 cuts)',
       'Seasonal Pro from $849/season (20 cuts)',
       'Edge trim, string trim & blower cleanup included',
@@ -29,6 +29,7 @@ const services = [
       'Recommended 3–4 applications per season',
       'Subsequent applications quoted by lawn size',
       'Pet-safe & eco-friendly products only',
+      'Bundle with any seasonal mowing plan and save 15%',
     ],
   },
   {
@@ -234,7 +235,7 @@ export default function Services({ onQuote }) {
               {
                 name: 'All-Inclusive Seasonal Care',
                 oldPrice: '$1,297',
-                price: '$1,199',
+                price: '$1,229',
                 per: '/season',
                 badge: 'Best Value',
                 pop: true,

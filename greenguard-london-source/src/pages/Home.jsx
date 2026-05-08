@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SEO from '../components/SEO'
 import { Link } from 'react-router-dom'
 import { CheckCircle, Clock, Shield, Leaf, Scissors, Flower2, TreePine, Sprout, Sun, ArrowRight, MapPin } from 'lucide-react'
@@ -14,6 +15,7 @@ const services = [
 
 
 export default function Home({ onQuote }) {
+  const [bannerDismissed, setBannerDismissed] = useState(false)
   return (
     <>
       <SEO
@@ -22,6 +24,30 @@ export default function Home({ onQuote }) {
         path="/"
         keywords="lawn mowing London Ontario, landscaping London ON, lawn care London Ontario, lawn mowing cost London, spring yard cleanup London, weed control London, fertilization London ON, garden maintenance London, affordable lawn care London ON, seasonal lawn package London Ontario, lawn care near me London, Greenguard London"
       />
+
+      {!bannerDismissed && (
+        <div style={{ background: '#1a3a1a' }} className="relative z-20 py-3 px-4">
+          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-white text-center sm:text-left">
+            <div>
+              <p className="font-bold text-sm">🎉 Limited Offer — Save 15% When You Bundle Any Seasonal Package with Weed Control or Fertilizer</p>
+              <p className="text-xs text-green-300 mt-0.5">Combine lawn care + weed control for the best results and biggest savings.</p>
+            </div>
+            <button
+              onClick={onQuote}
+              className="shrink-0 bg-green-400 hover:bg-green-300 text-green-950 font-bold text-sm px-6 py-2 rounded-full transition"
+            >
+              Get Bundle Quote
+            </button>
+          </div>
+          <button
+            onClick={() => setBannerDismissed(true)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-xl leading-none"
+            aria-label="Dismiss banner"
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       <section className="relative text-white overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #0f2e1a 50%, #1B5E20 100%)' }}>
         <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle at 30% 40%, #22c55e 0%, transparent 50%), radial-gradient(circle at 80% 60%, #16a34a 0%, transparent 50%)' }} />
@@ -131,9 +157,9 @@ export default function Home({ onQuote }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { name: 'Per Cut', price: '$49', per: '/cut', features: ['Professional mowing', 'String trimming & edging', 'Blower cleanup', 'No commitment required'] },
+              { name: 'Per Cut', price: '$59', per: '/cut', features: ['Professional mowing', 'String trimming & edging', 'Blower cleanup', 'No commitment required'] },
               { name: 'Seasonal Pro', price: '$849', per: '/season', features: ['Weekly May–Aug (16 cuts)', 'Biweekly Sep–Oct (4 cuts)', '20 total cuts', 'Priority scheduling'] },
-              { name: 'All-Inclusive Seasonal', price: '$1,199', per: '/season', pop: true, features: ['Full seasonal mowing (20 cuts)', 'Spring cleanup included', 'Fall cleanup included', 'Priority scheduling'] },
+              { name: 'All-Inclusive Seasonal', price: '$1,229', per: '/season', pop: true, features: ['Full seasonal mowing (20 cuts)', 'Spring cleanup included', 'Fall cleanup included', 'Priority scheduling'] },
             ].map((plan, i) => (
               <div key={i} className={`rounded-2xl p-6 relative ${plan.pop ? 'bg-green-600 text-white ring-4 ring-green-300 scale-105' : 'bg-white border border-gray-200'}`}>
                 {plan.pop && <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Most Popular</div>}
