@@ -88,10 +88,14 @@ export default function QuoteModal({ onClose }) {
                   checked={smsConsent} onChange={e => setSmsConsent(e.target.checked)}
                   className="mt-0.5 w-4 h-4 shrink-0 accent-green-600"
                 />
-                <span className="text-sm text-gray-700 font-medium leading-snug">
-                  By checking this box, you agree to receive informational and marketing text messages from GREENGUARD LONDON. Message frequency varies. Message and data rates may apply. Reply HELP for help and STOP to opt out. See our privacy policy and terms at https://greenguardlondon.ca/privacy.
+                <span className="text-sm text-gray-700 leading-snug">
+                  I agree to receive informational and marketing text messages from GREENGUARD LONDON to the phone number provided. Message frequency varies. Message and data rates may apply. Reply HELP for help and STOP to opt out. Consent is not a condition of purchase. We do not share your mobile opt-in information with anyone. See our <a href="/privacy" className="text-green-600 hover:underline font-medium">Privacy Policy</a> and <a href="/terms" className="text-green-600 hover:underline font-medium">Terms</a>.
                 </span>
               </label>
+              <div className="flex gap-4 text-xs pl-7">
+                <a href="/privacy" className="text-green-600 hover:underline font-medium">Privacy Policy</a>
+                <a href="/terms" className="text-green-600 hover:underline font-medium">Terms &amp; Conditions</a>
+              </div>
             </div>
 
             <button type="submit" className="btn-primary w-full mt-1">
