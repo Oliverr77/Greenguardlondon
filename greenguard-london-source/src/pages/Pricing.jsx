@@ -22,6 +22,35 @@ export default function Pricing({ onQuote }) {
         description="Affordable lawn care packages starting at $59/cut. Seasonal Pro, All-Inclusive, and Year-Round Protection plans available. Free quote."
         path="/pricing"
         keywords="lawn mowing cost London Ontario, lawn care pricing London ON, affordable lawn care London, seasonal lawn package London Ontario, lawn mowing price per cut London, weekly lawn mowing London ON"
+        schema={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Lawn Care Pricing & Seasonal Packages | Greenguard London',
+            url: 'https://greenguardlondon.ca/pricing',
+            description: 'Transparent lawn care pricing for London, Ontario homeowners. Per-cut mowing from $59. Seasonal packages from $599. All-Inclusive from $809. All prices in CAD plus HST.',
+            mainEntity: {
+              '@type': 'ItemList',
+              name: 'Greenguard London Lawn Care Packages',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, item: { '@type': 'Offer', name: 'Per Cut Lawn Mowing — Small Property', price: '59.00', priceCurrency: 'CAD', description: 'Mowing, edge trimming, string trimming, and blower cleanup for properties under 2,500 sq ft. No commitment.', seller: { '@type': 'LawnAndGardenService', name: 'Greenguard London' } } },
+                { '@type': 'ListItem', position: 2, item: { '@type': 'Offer', name: 'Biweekly Seasonal Package', price: '599.00', priceCurrency: 'CAD', description: 'Bi-weekly mowing April–October, ~13 cuts. Includes trimming, edging, and blower cleanup every visit.', seller: { '@type': 'LawnAndGardenService', name: 'Greenguard London' } } },
+                { '@type': 'ListItem', position: 3, item: { '@type': 'Offer', name: 'Seasonal Pro Package', price: '849.00', priceCurrency: 'CAD', description: 'Weekly May–Aug (16 cuts) + bi-weekly Sep–Oct (4 cuts) = 20 total cuts per season.', seller: { '@type': 'LawnAndGardenService', name: 'Greenguard London' } } },
+                { '@type': 'ListItem', position: 4, item: { '@type': 'Offer', name: 'All-Inclusive Seasonal Care — Biweekly', price: '809.00', priceCurrency: 'CAD', description: 'Biweekly mowing (~13 cuts) plus fall cleanup in London, Ontario.', seller: { '@type': 'LawnAndGardenService', name: 'Greenguard London' } } },
+                { '@type': 'ListItem', position: 5, item: { '@type': 'Offer', name: 'All-Inclusive Seasonal Care — Seasonal Pro', price: '1049.00', priceCurrency: 'CAD', description: 'Seasonal Pro mowing (20 cuts) plus fall cleanup in London, Ontario.', seller: { '@type': 'LawnAndGardenService', name: 'Greenguard London' } } },
+                { '@type': 'ListItem', position: 6, item: { '@type': 'Offer', name: 'Year-Round Property Protection', price: '1899.00', priceCurrency: 'CAD', description: 'All-Inclusive seasonal lawn care plus full winter snow removal through SnowGuard London.', seller: { '@type': 'LawnAndGardenService', name: 'Greenguard London' } } },
+              ],
+            },
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://greenguardlondon.ca' },
+              { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://greenguardlondon.ca/pricing' },
+            ],
+          },
+        ]}
       />
 
       {/* Hero */}

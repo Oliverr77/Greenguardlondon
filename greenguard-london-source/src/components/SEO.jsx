@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-export default function SEO({ title, description, path = '', keywords = '', schema = null }) {
+export default function SEO({ title, description, path = '', keywords = '', schema = null, noindex = false }) {
   const base = 'https://greenguardlondon.ca'
   const full = title || 'Greenguard London | Professional Lawn Care & Landscape Services | London, ON'
   const desc = description || 'Professional lawn care and landscape services in London, Ontario. Seasonal packages from $479. Weekly mowing, weed control, fertilizer programs. From the team behind SnowGuard London.'
@@ -12,6 +12,7 @@ export default function SEO({ title, description, path = '', keywords = '', sche
     <Helmet>
       <title>{full}</title>
       <meta name="description" content={desc} />
+      {noindex && <meta name="robots" content="noindex, follow" />}
       <meta name="keywords" content={keywords || defaultKeywords} />
       <link rel="canonical" href={url} />
       <meta property="og:type" content="website" />

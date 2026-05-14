@@ -14,6 +14,71 @@ const services = [
 
 
 
+const homeSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LawnAndGardenService',
+    name: 'Greenguard London',
+    alternateName: 'GreenGuard London Lawn Care',
+    url: 'https://greenguardlondon.ca',
+    logo: 'https://greenguardlondon.ca/assets/logo-DHd-0LVC.png',
+    image: 'https://greenguardlondon.ca/og-image.jpg',
+    description: 'Professional lawn mowing, landscaping, weed control, fertilization, and seasonal yard cleanup in London, Ontario. Per cut from $59, seasonal packages from $599. Serving all neighbourhoods in London, ON.',
+    telephone: '+1-226-212-8555',
+    email: 'info@greenguardlondon.ca',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'London',
+      addressRegion: 'ON',
+      postalCode: 'N6A 3K7',
+      addressCountry: 'CA',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 42.9849, longitude: -81.2453 },
+    areaServed: [
+      { '@type': 'City', name: 'London, Ontario, Canada' },
+      'Masonville', 'Byron', 'Old North', 'White Oaks', 'Hyde Park',
+      'Wortley Village', 'Lambeth', 'Argyle', 'Oakridge', 'Riverbend',
+      'Sunningdale', 'Stoney Creek', 'Downtown London', 'Northridge',
+      'Stoneybrook', 'Medway',
+    ].map(n => typeof n === 'string' ? { '@type': 'Neighborhood', name: `${n}, London, ON` } : n),
+    priceRange: '$59 - $1,899',
+    currenciesAccepted: 'CAD',
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+      opens: '07:00',
+      closes: '20:00',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Lawn Care & Landscaping Services in London Ontario',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Per Cut Lawn Mowing', description: 'Professional mowing, edge trimming, string trimming, and blower cleanup. Starting at $59/cut. No contract required.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Biweekly Seasonal Package', description: 'Bi-weekly mowing April–October, ~13 cuts. Starting at $599/season in London, ON.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Seasonal Pro Package', description: 'Weekly May–Aug (16 cuts) + bi-weekly Sep–Oct (4 cuts) = 20 cuts. Starting at $849/season.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'All-Inclusive Seasonal Care', description: 'Seasonal mowing + fall cleanup in one package. Starting at $809/season in London, ON.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Year-Round Property Protection', description: 'All-Inclusive lawn care + SnowGuard winter snow removal. Starting at $1,899/year.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Weed Control & Fertilizer', description: 'Pet-safe, eco-friendly treatments. First application $34.99.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Spring Cleanup', description: 'Debris removal, bed preparation, first mow. Starting at $199 in London, ON.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fall Cleanup', description: 'Leaf removal, bed winterizing, final mow. Starting at $249 in London, ON.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Aeration', description: 'Core aeration for compacted soil. Starting at $99 in London, Ontario.' } },
+      ],
+    },
+    sameAs: ['https://snowguardlondon.ca'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Greenguard London',
+    url: 'https://greenguardlondon.ca',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: 'https://greenguardlondon.ca/quote-calculator?q={search_term_string}' },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+]
+
 export default function Home({ onQuote }) {
   const [bannerDismissed, setBannerDismissed] = useState(false)
   return (
@@ -23,6 +88,7 @@ export default function Home({ onQuote }) {
         description="Expert lawn mowing, weed control, and seasonal cleanup in London, Ontario. Eco-friendly, pet-safe, fully insured. Get your free quote today."
         path="/"
         keywords="lawn mowing London Ontario, landscaping London ON, lawn care London Ontario, lawn mowing cost London, spring yard cleanup London, weed control London, fertilization London ON, garden maintenance London, affordable lawn care London ON, seasonal lawn package London Ontario, lawn care near me London, Greenguard London"
+        schema={homeSchema}
       />
 
       {!bannerDismissed && (

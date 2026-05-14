@@ -28,6 +28,7 @@ const routes = [
   '/thank-you',
   '/blog',
   '/terms',
+  '/quote-calculator',
 ]
 
 console.log('\n🚀  GreenGuard London — SSR Pre-rendering (no Chrome needed)\n')

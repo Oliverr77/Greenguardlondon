@@ -95,41 +95,55 @@ export default function Services({ onQuote }) {
         description="Professional lawn maintenance, spring cleanup, fertilization, and weed control. Serving all London neighbourhoods. Book online 7am–8pm daily."
         path="/services"
         keywords="lawn mowing service London Ontario, landscaping London ON, weed control London, fertilization London Ontario, spring cleanup London, fall leaf removal London ON, garden maintenance London, yard care London Ontario"
-        schema={{
-          '@context': 'https://schema.org',
-          '@type': 'LocalBusiness',
-          name: 'Greenguard London',
-          description: 'Professional lawn care and landscaping services in London, Ontario.',
-          url: 'https://greenguardlondon.ca',
-          telephone: '+12262128555',
-          email: 'info@greenguardlondon.ca',
-          image: 'https://greenguardlondon.ca/og-image.jpg',
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'London',
-            addressRegion: 'ON',
-            addressCountry: 'CA',
+        schema={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'LawnAndGardenService',
+            name: 'Greenguard London',
+            description: 'Professional lawn care and landscaping services in London, Ontario.',
+            url: 'https://greenguardlondon.ca',
+            logo: 'https://greenguardlondon.ca/assets/logo-DHd-0LVC.png',
+            telephone: '+1-226-212-8555',
+            email: 'info@greenguardlondon.ca',
+            image: 'https://greenguardlondon.ca/og-image.jpg',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'London',
+              addressRegion: 'ON',
+              postalCode: 'N6A 3K7',
+              addressCountry: 'CA',
+            },
+            geo: { '@type': 'GeoCoordinates', latitude: 42.9849, longitude: -81.2453 },
+            openingHoursSpecification: {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+              opens: '07:00',
+              closes: '20:00',
+            },
+            priceRange: '$59 - $1,899',
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Lawn Care Services',
+              itemListElement: [
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Mowing', description: 'Professional mowing, edge trimming, string trimming, and blower cleanup. Per cut from $59.' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Spring Cleanup', description: 'Debris removal, bed preparation, first mow. Starting at $199.' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Weed Control', description: 'Pet-safe, eco-friendly weed control. First application $34.99.' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Fertilization', description: 'Eco-friendly fertilizer treatments. First application $34.99.' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fall Leaf Cleanup', description: 'Leaf removal, bed winterizing, final mow. Starting at $249.' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garden Bed Maintenance', description: 'Weeding, mulching, edging, and seasonal care. Custom quote.' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Aeration', description: 'Core aeration for compacted soil. Starting at $99.' } },
+              ],
+            },
           },
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 42.9849,
-            longitude: -81.2453,
-          },
-          openingHours: 'Mo-Su 07:00-20:00',
-          priceRange: '$$',
-          hasOfferCatalog: {
-            '@type': 'OfferCatalog',
-            name: 'Lawn Care Services',
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Mowing' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Spring Cleanup' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Weed Control' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Fertilization' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fall Leaf Cleanup' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garden Bed Maintenance' } },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://greenguardlondon.ca' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://greenguardlondon.ca/services' },
             ],
           },
-        }}
+        ]}
       />
 
       {/* Hero */}

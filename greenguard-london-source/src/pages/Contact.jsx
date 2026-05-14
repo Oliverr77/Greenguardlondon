@@ -29,6 +29,14 @@ export default function Contact() {
         description="Request a free on-site assessment. Greenguard London serves all neighbourhoods. Call (226) 212-8555 or submit the form below."
         path="/contact"
         keywords="contact lawn care London Ontario, lawn care quote London ON, lawn mowing phone number London, Greenguard London contact, landscaping quote London Ontario"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://greenguardlondon.ca' },
+            { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://greenguardlondon.ca/contact' },
+          ],
+        }}
       />
 
       <section className="hero-gradient text-white py-16">

@@ -25,12 +25,31 @@ function FaqItem({ q, a }) {
         <span className="font-semibold text-gray-900">{q}</span>
         <ChevronDown size={20} className={`text-gray-400 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
-      {open && <p className="pb-5 text-gray-600 leading-relaxed text-sm">{a}</p>}
+      <p className={`pb-5 text-gray-600 leading-relaxed text-sm ${open ? '' : 'hidden'}`}>{a}</p>
     </div>
   )
 }
 
 export default function FAQ() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://greenguardlondon.ca' },
+      { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://greenguardlondon.ca/faq' },
+    ],
+  }
+
   return (
     <>
       <SEO
@@ -38,6 +57,7 @@ export default function FAQ() {
         description="Frequently asked questions about lawn mowing costs, seasonal packages, weed control, and landscaping in London, Ontario. Per cut from $59, seasonal from $599. Get answers from Greenguard London."
         path="/faq"
         keywords="lawn care FAQ London Ontario, lawn mowing cost London ON, seasonal lawn care package London, weed control questions London Ontario, spring cleanup London ON, Greenguard London FAQ"
+        schema={[faqSchema, breadcrumbSchema]}
       />
 
       <section className="hero-gradient text-white py-16">

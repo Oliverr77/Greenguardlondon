@@ -21,6 +21,7 @@ export default function ThankYou() {
         title="Thank You — Greenguard London"
         description="Thank you for contacting Greenguard London. We'll respond to your lawn care inquiry within 24 hours."
         path="/thank-you"
+        noindex={true}
       />
 
       {/* Hero Section */}
