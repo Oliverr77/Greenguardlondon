@@ -234,12 +234,12 @@ export default function Services({ onQuote }) {
             {[
               {
                 name: 'All-Inclusive Seasonal Care',
-                oldPrice: '$1,297',
-                price: '$1,229',
+                oldPrice: '$1,098',
+                price: '$1,049',
                 per: '/season',
                 badge: 'Best Value',
                 pop: true,
-                desc: 'Seasonal Pro mowing (20 cuts) + Spring cleanup + Fall cleanup — all in one package',
+                desc: 'Seasonal Pro mowing (20 cuts) + Fall cleanup — all in one package',
                 cta: 'Get This Package',
               },
               {

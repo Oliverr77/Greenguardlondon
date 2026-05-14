@@ -159,7 +159,7 @@ export default function Home({ onQuote }) {
             {[
               { name: 'Per Cut', price: '$59', per: '/cut', features: ['Professional mowing', 'String trimming & edging', 'Blower cleanup', 'No commitment required'] },
               { name: 'Seasonal Pro', price: '$849', per: '/season', features: ['Weekly May–Aug (16 cuts)', 'Biweekly Sep–Oct (4 cuts)', '20 total cuts', 'Priority scheduling'] },
-              { name: 'All-Inclusive Seasonal', price: '$1,229', per: '/season', pop: true, features: ['Full seasonal mowing (20 cuts)', 'Spring cleanup included', 'Fall cleanup included', 'Priority scheduling'] },
+              { name: 'All-Inclusive Seasonal', price: '$1,049', per: '/season', pop: true, features: ['Full seasonal mowing (20 cuts)', 'Fall cleanup included', 'Priority scheduling'] },
             ].map((plan, i) => (
               <div key={i} className={`rounded-2xl p-6 relative ${plan.pop ? 'bg-green-600 text-white ring-4 ring-green-300 scale-105' : 'bg-white border border-gray-200'}`}>
                 {plan.pop && <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Most Popular</div>}

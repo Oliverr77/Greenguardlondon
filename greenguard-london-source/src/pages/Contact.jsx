@@ -90,7 +90,7 @@ export default function Contact() {
                   <option>Per Cut Lawn Mowing (from $59/cut)</option>
                   <option>Biweekly Seasonal Package (from $599/season)</option>
                   <option>Seasonal Pro Package (from $849/season)</option>
-                  <option>All-Inclusive Seasonal Care (from $1,229/season)</option>
+                  <option>All-Inclusive Seasonal Care (from $809/season)</option>
                   <option>Year-Round Property Protection (from $1,899/year)</option>
                   <option>Weed Control (first application $34.99)</option>
                   <option>Fertilizer (first application $34.99)</option>

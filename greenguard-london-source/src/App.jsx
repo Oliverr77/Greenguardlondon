@@ -1,9 +1,9 @@
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import QuoteModal from './components/QuoteModal'
-import { useState } from 'react'
+import LoadingMower from './components/LoadingMower'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Pricing from './pages/Pricing'
@@ -26,10 +26,21 @@ function ScrollToTop() {
 
 export default function App() {
   const [showQuote, setShowQuote] = useState(false)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const firstRender = useRef(true)
+  const location = useLocation()
+
+  useEffect(() => {
+    if (firstRender.current) { firstRender.current = false; return }
+    setIsTransitioning(true)
+    const t = setTimeout(() => setIsTransitioning(false), 400)
+    return () => clearTimeout(t)
+  }, [location.pathname])
 
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
+      {isTransitioning && <LoadingMower fullscreen />}
       <Header onQuote={() => setShowQuote(true)} />
       <main className="flex-1">
         <Routes>

@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import SEO from '../components/SEO'
+import LoadingMower from '../components/LoadingMower'
 
 const SERVICES = [
   { id: 'One-Time Cut', icon: '✂️', desc: 'Single mow, no contract' },
   { id: 'Biweekly Seasonal', icon: '🔄', desc: '~13 cuts, Apr–Oct' },
   { id: 'Seasonal Pro', icon: '⭐', desc: 'Weekly + biweekly, 20 cuts' },
-  { id: 'All-Inclusive Seasonal', icon: '👑', desc: 'Mowing + spring & fall cleanup' },
+  { id: 'All-Inclusive Seasonal', icon: '👑', desc: 'Mowing + fall cleanup — limited offer' },
   { id: 'Weed Control', icon: '🌱', desc: 'First application $34.99' },
   { id: 'Fertilizer', icon: '💧', desc: 'First application $34.99' },
   { id: 'Spring Cleanup', icon: '🌷', desc: 'Get your yard season-ready' },
@@ -31,8 +32,8 @@ const TIERS = {
     { label: 'Large Lawn', maxSqft: Infinity, custom: true, unit: '/season' },
   ],
   'All-Inclusive Seasonal': [
-    { label: 'Small Lawn', maxSqft: 2500, low: 1229, high: 1349, unit: '/season' },
-    { label: 'Medium Lawn', maxSqft: 4000, low: 1349, high: 1499, unit: '/season' },
+    { label: 'Small Lawn', maxSqft: 2500, low: 1049, high: 1149, unit: '/season' },
+    { label: 'Medium Lawn', maxSqft: 4000, low: 1149, high: 1299, unit: '/season' },
     { label: 'Large Lawn', maxSqft: Infinity, custom: true, unit: '/season' },
   ],
   'Spring Cleanup': [
@@ -51,7 +52,7 @@ const INCLUDES = {
   'One-Time Cut': ['Professional lawn mowing', 'Edge trimming & string trimming', 'Blower cleanup', 'No contract required'],
   'Biweekly Seasonal': ['~13 cuts April through October', 'Edge trimming every visit', 'String trimming every visit', 'Blower cleanup every visit', 'Locked-in seasonal pricing'],
   'Seasonal Pro': ['20 total cuts (weekly May–Aug + biweekly Sep–Oct)', 'Edge trimming every visit', 'String trimming every visit', 'Blower cleanup every visit', 'Priority scheduling'],
-  'All-Inclusive Seasonal': ['Full Seasonal Pro mowing (20 cuts)', 'Spring cleanup included', 'Fall cleanup included', 'Priority scheduling', 'Locked-in pricing'],
+  'All-Inclusive Seasonal': ['Full Seasonal Pro mowing (20 cuts)', 'Fall cleanup included', 'Priority scheduling', 'Locked-in pricing'],
   'Weed Control': ['First application $34.99', 'Pet-safe & eco-friendly products', 'Recommended 3–4 applications/season', 'Subsequent applications custom-quoted'],
   'Fertilizer': ['First application $34.99', 'Pet-safe & eco-friendly products', 'Recommended 3–4 applications/season', 'Subsequent applications custom-quoted'],
   'Spring Cleanup': ['Debris removal & thatch clearing', 'Garden bed preparation', 'First mow of the season', 'Property ready for summer'],
@@ -141,16 +142,14 @@ export default function QuoteCalculator({ onQuote }) {
       lawnSize: String(sqft),
       estimatedPrice: formatEstimatedPrice(result),
     }).toString()
-    try {
-      const res = await fetch('/', {
+    await Promise.all([
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
-      })
-      if (!res.ok) throw new Error(`Server responded ${res.status}`)
-    } catch (err) {
-      console.error('Calculator lead form error:', err)
-    }
+      }).catch(err => console.error('Calculator lead form error:', err)),
+      new Promise(resolve => setTimeout(resolve, 1500)),
+    ])
     setSubmitting(false)
     setStep(4)
   }
@@ -413,58 +412,63 @@ export default function QuoteCalculator({ onQuote }) {
           {/* ── STEP 3: Contact Info (Lead Capture) ── */}
           {step === 3 && (
             <div id="step3contact" className="calc-slide-up">
-              <button onClick={() => setStep(2)} className="text-sm text-green-600 font-semibold hover:underline mb-6 flex items-center gap-1">
-                ← Change lawn size
-              </button>
-              <h2 className="text-xl font-bold text-gray-900 mb-1 text-center">Almost there! Where should we send your quote?</h2>
-              <p className="text-gray-500 text-sm text-center mb-8">Enter your details to see your instant price.</p>
+              {submitting ? (
+                <LoadingMower message="Calculating your quote..." />
+              ) : (
+                <>
+                  <button onClick={() => setStep(2)} className="text-sm text-green-600 font-semibold hover:underline mb-6 flex items-center gap-1">
+                    ← Change lawn size
+                  </button>
+                  <h2 className="text-xl font-bold text-gray-900 mb-1 text-center">Almost there! Where should we send your quote?</h2>
+                  <p className="text-gray-500 text-sm text-center mb-8">Enter your details to see your instant price.</p>
 
-              <div className="bg-white rounded-2xl shadow-lg p-6 lg:p-8 border border-gray-100 mb-6">
-                <div hidden><input name="bot-field" /></div>
-                <div className="flex flex-col gap-4">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Full Name"
-                    value={contactName}
-                    onChange={e => setContactName(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  <input
-                    type="email"
-                    required
-                    placeholder="Email Address"
-                    value={contactEmail}
-                    onChange={e => setContactEmail(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  <input
-                    type="tel"
-                    required
-                    placeholder="Phone Number"
-                    value={contactPhone}
-                    onChange={e => setContactPhone(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  <input
-                    type="text"
-                    required
-                    placeholder="Property Address in London, ON"
-                    value={contactAddress}
-                    onChange={e => setContactAddress(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-                <p className="text-xs text-gray-400 mt-5 text-center">🔒 Your information is private and never shared with third parties.</p>
-              </div>
+                  <div className="bg-white rounded-2xl shadow-lg p-6 lg:p-8 border border-gray-100 mb-6">
+                    <div hidden><input name="bot-field" /></div>
+                    <div className="flex flex-col gap-4">
+                      <input
+                        type="text"
+                        required
+                        placeholder="Full Name"
+                        value={contactName}
+                        onChange={e => setContactName(e.target.value)}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                      <input
+                        type="email"
+                        required
+                        placeholder="Email Address"
+                        value={contactEmail}
+                        onChange={e => setContactEmail(e.target.value)}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                      <input
+                        type="tel"
+                        required
+                        placeholder="Phone Number"
+                        value={contactPhone}
+                        onChange={e => setContactPhone(e.target.value)}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                      <input
+                        type="text"
+                        required
+                        placeholder="Property Address in London, ON"
+                        value={contactAddress}
+                        onChange={e => setContactAddress(e.target.value)}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    <p className="text-xs text-gray-400 mt-5 text-center">🔒 Your information is private and never shared with third parties.</p>
+                  </div>
 
-              <button
-                onClick={submitContact}
-                disabled={submitting}
-                className="btn-primary w-full text-lg calc-pulse-btn"
-              >
-                {submitting ? 'Submitting…' : '🔍 Show My Quote'}
-              </button>
+                  <button
+                    onClick={submitContact}
+                    className="btn-primary w-full text-lg calc-pulse-btn"
+                  >
+                    🔍 Show My Quote
+                  </button>
+                </>
+              )}
             </div>
           )}
 

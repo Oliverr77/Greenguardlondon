@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SEO from '../components/SEO'
 import { Link } from 'react-router-dom'
 import { CheckCircle, Phone, Mail, Star, Shield } from 'lucide-react'
@@ -12,6 +13,8 @@ const addons = [
 ]
 
 export default function Pricing({ onQuote }) {
+  const [allInclusiveType, setAllInclusiveType] = useState('pro')
+
   return (
     <>
       <SEO
@@ -30,8 +33,33 @@ export default function Pricing({ onQuote }) {
       </section>
 
 
+      {/* ===== CATEGORY SELECTOR ===== */}
+      <section className="bg-white border-b py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-center text-sm text-gray-500 mb-5 font-medium">Jump to a section</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Per Cut', sub: 'From $59/cut', icon: '✂️', target: 'per-cut' },
+              { label: 'Seasonal Plans', sub: 'From $599/season', icon: '📅', target: 'seasonal' },
+              { label: 'Add-Ons', sub: 'From $34.99', icon: '➕', target: 'addons' },
+              { label: 'All-In Packages', sub: 'From $809/season', icon: '👑', target: 'all-in' },
+            ].map((cat) => (
+              <button
+                key={cat.label}
+                onClick={() => document.getElementById(cat.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                className="flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-gray-100 hover:border-green-400 hover:bg-green-50 transition-all text-center"
+              >
+                <span className="text-2xl">{cat.icon}</span>
+                <span className="font-bold text-gray-900 text-sm">{cat.label}</span>
+                <span className="text-xs text-green-600 font-semibold">{cat.sub}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== SECTION 1: PER CUT ===== */}
-      <section className="py-14 bg-white">
+      <section id="per-cut" className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Per Cut Service</h2>
@@ -175,7 +203,7 @@ export default function Pricing({ onQuote }) {
       </section>
 
       {/* ===== SECTION 3: ADD-ON SERVICES ===== */}
-      <section className="py-14 bg-white">
+      <section id="addons" className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">Add-On Services</h2>
@@ -198,7 +226,7 @@ export default function Pricing({ onQuote }) {
       </section>
 
       {/* ===== SECTION 4: ALL-IN PACKAGES ===== */}
-      <section id="combos" className="py-14 bg-gray-50">
+      <section id="all-in" className="py-14 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-6">
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">All-In Packages — Maximum Savings</h2>
@@ -207,24 +235,45 @@ export default function Pricing({ onQuote }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
-            {/* All-Inclusive Seasonal */}
+            {/* All-Inclusive Seasonal — Toggle */}
             <div className="relative bg-green-600 rounded-2xl p-7 flex flex-col text-white ring-4 ring-green-300 shadow-2xl md:scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-extrabold px-5 py-1.5 rounded-full uppercase tracking-wider shadow whitespace-nowrap flex items-center gap-1">
-                <Star size={12} /> Most Popular — Best Value
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white text-xs font-extrabold px-5 py-1.5 rounded-full uppercase tracking-wider shadow whitespace-nowrap">
+                LIMITED TIME OFFER
               </div>
               <div className="text-xs font-bold uppercase tracking-widest text-green-300 mb-1 mt-2">All-Inclusive</div>
-              <h3 className="text-lg font-extrabold text-white mb-2">All-Inclusive Seasonal Care</h3>
-              <p className="text-green-200 text-sm mb-4 leading-relaxed">Premium seasonal mowing + spring and fall cleanup in one package.</p>
+              <h3 className="text-lg font-extrabold text-white mb-3">All-Inclusive Seasonal Care</h3>
+
+              {/* Mowing type toggle */}
+              <div className="flex rounded-xl overflow-hidden border border-green-400 mb-5 text-sm">
+                <button
+                  onClick={() => setAllInclusiveType('pro')}
+                  className={`flex-1 py-2 font-semibold transition ${allInclusiveType === 'pro' ? 'bg-white text-green-700' : 'text-green-200 hover:text-white'}`}
+                >
+                  Seasonal Pro
+                </button>
+                <button
+                  onClick={() => setAllInclusiveType('biweekly')}
+                  className={`flex-1 py-2 font-semibold transition ${allInclusiveType === 'biweekly' ? 'bg-white text-green-700' : 'text-green-200 hover:text-white'}`}
+                >
+                  Biweekly
+                </button>
+              </div>
+
               <div className="mb-5">
                 <span className="text-xs text-green-300 block mb-0.5">Starting from</span>
-                <span className="text-4xl font-extrabold text-white">$1,229</span>
+                <span className="text-4xl font-extrabold text-white">{allInclusiveType === 'pro' ? '$1,049' : '$809'}</span>
                 <span className="text-green-300 text-sm">/season</span>
-                <div className="text-sm mt-1 text-green-200">If purchased separately: $1,297 — <span className="text-yellow-300 font-bold">You save $68</span></div>
+                <div className="text-sm mt-1 text-green-200">
+                  {allInclusiveType === 'pro'
+                    ? <>If purchased separately: $1,098 — <span className="text-yellow-300 font-bold">You save $49</span></>
+                    : <>If purchased separately: $848 — <span className="text-yellow-300 font-bold">You save $39</span></>}
+                </div>
               </div>
               <ul className="space-y-2 flex-1 mb-7">
                 {[
-                  'Full Seasonal Pro mowing (20 cuts)',
-                  'Spring cleanup included ($199 value)',
+                  allInclusiveType === 'pro'
+                    ? 'Full Seasonal Pro mowing (20 cuts)'
+                    : 'Biweekly mowing (~13 cuts, Apr–Oct)',
                   'Fall cleanup included ($249 value)',
                   'Priority scheduling + locked-in pricing',
                 ].map((f, i) => (
